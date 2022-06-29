@@ -5,7 +5,7 @@ import noteTodos from "./dynamic-cmp/note-todos.cmp.js"
 export default {
     props: ['note'],
     template: `
-        <section class="notes-preview">
+        <section>
                 <component :is="note.type" :info="note.info">
                 </component> 
         </section>

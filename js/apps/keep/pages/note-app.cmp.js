@@ -4,7 +4,6 @@ import { noteService } from "../services/note.service.js"
 export default {
     template: `
             <section class="keep-app">
-                <h1>Welcom to Keep app!</h1>
                <note-list :notes="notesToShow"/>
             </section>
 `,

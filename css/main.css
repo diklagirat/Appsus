@@ -1,5 +1,5 @@
 @import url('./apps/keep/keep-app.css');
-
+@import url('./apps//keep/note-list.css');
 * {
     box-sizing: border-box;
 }
@@ -18,21 +18,6 @@ body {
     --dark-purple: #5f064c;
 }
 
-.note-img-container{
-    background-color: aqua;
-    width: 80px;
-    height: 80px;
-}
-.note-txt-container {
-    background-color:crimson;
-    width: 80px;
-    height: 80px;
-}
-.note-todo-container {
-    background-color: rgb(53, 23, 206);
-    width: 80px;
-    height: 80px;
-}
 /* Helper*/
 
 .flex {
