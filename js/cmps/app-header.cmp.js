@@ -8,7 +8,7 @@ export default {
                                 <router-link to="/keep">Keep App</router-link>
                             </li>
                             <li>
-                                <router-link to="/mail">Mail App</router-link>
+                                <router-link to="/email">Email App</router-link>
                             </li>
                         </ul>
                 </nav>
