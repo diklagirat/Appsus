@@ -1,19 +1,20 @@
+import emailPreview from "./email-preview.cmp.js"
+
 export default {
     props: ['emails'],
     template: `
-        <section class="emails-list">
+        <section class="emails-list table">
             <ul>
-                <li v-for="(email, idx) in emails" :key="email.id" class="email-preview-card">
-                    <pre>{{email}}</pre>
-                    <div class="actions">
-                        <!-- todo: email-preview comes here -->
-                        <button @click="moveToDetails(email.id)" title="Show Email Info">Details</button>
-                        <button @click="remove(email.id)" title="Delete Email">Delete</button>
+                <li v-for="(email, idx) in emails" :key="email.id" class="email-preview-card clean-list row">
+                    <email-preview :email="email"/>
                     </div>
                 </li>
             </ul>
         </section>
 `,
+    components: {
+        emailPreview
+    },
     data() {
         return {}
     },
@@ -21,7 +22,7 @@ export default {
     methods: {
         moveToDetails(emailId) {
             console.log('email.id:', emailId)
-            console.log('this.$router:',this.$router)
+            console.log('this.$router:', this.$router)
             this.$router.push('/email' + emailId)
         },
         remove(emailId) {

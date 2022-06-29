@@ -1,0 +1,17 @@
+.emails-list {
+    text-align: center;
+    width: 100%;
+}
+
+.table {
+    display: table;
+    background-color: rgb(241, 202, 202);
+}
+
+.email-preview-card {
+    width: 100%;
+}
+
+.row {
+    border-bottom: 1px solid gray;
+}
