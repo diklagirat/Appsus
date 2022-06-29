@@ -1,4 +1,4 @@
-
+import notePreview from './note-preview.cmp.js'
 export default {
     props: ['notes'],
     template: `
@@ -6,7 +6,7 @@ export default {
         <h2>In list</h2>
                 <ul>
                     <li v-for="(note,idx) in notes" :key="note.id" class="note-preview-card">
-                        <pre>{{note}}</pre>
+                        <note-preview :note="note"/>
                         <div class="actions">
                             <button @click="moveToDetails(note.id)" title="Show Note Info"> Details</button >
                             <button @click="remove(note.id)" title="Delete Note" >Delete</button>
@@ -16,7 +16,7 @@ export default {
             </section>
 `,
     components: {
-
+        notePreview,
     },
 
     data() {

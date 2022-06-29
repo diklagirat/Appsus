@@ -13,7 +13,7 @@
         "isPinned": "false",
         "info": {
             "url": "https://picsum.photos/200",
-            "tite": "Add your story ..."
+            "title": "Add your story ..."
         },
         "style": {
             "backgroundColor": "#f391e3"
@@ -25,7 +25,7 @@
         "isPinned": "false",
         "info": {
             "label": "Get my stuff together",
-            "todo": [
+            "todos": [
                 {
                     "txt": "Driving lisence",
                     "donAt": "187111111"
@@ -47,7 +47,7 @@
         "isPinned": "false",
         "info": {
             "url": "https://picsum.photos/200",
-            "tite": "hi user"
+            "title": "hi user"
         },
         "style": {
             "backgroundColor": "#f391e3"
@@ -59,7 +59,7 @@
         "isPinned": "false",
         "info": {
             "label": "Market",
-            "todo": [
+            "todos": [
                 {
                     "txt": "Buy milk",
                     "donAt": "187111111"
