@@ -1,6 +1,6 @@
 import { storageService } from "../../../services/storage.service.js"
 import { utilService } from "../../../services/util.service.js"
-import notesJson from '../../../../data/notes.json'assert {type: "json"}
+import notesJson from '../../../../data/notes.json' assert {type: "json"}
 
 const NOTES_KEY = 'notes'
 _createNotes()
