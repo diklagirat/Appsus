@@ -3,11 +3,13 @@ export default {
     props: ['notes'],
     template: `
         <section class="notes-list flex wrap">
-                <ul class="notes-container ">
-                    <li v-for="(note,idx) in notes" :key="note.id" class="notes-preview-card">
-                        <note-preview :note="note"/>
-                    </li>
-                </ul>
+            <div class="notes-list-container">
+                    <ul class="notes-container ">
+                        <li v-for="(note,idx) in notes" :key="note.id" class="notes-preview-card">
+                            <note-preview :note="note"/>
+                        </li>
+                    </ul>
+            </div>
             </section>
 `,
     components: {

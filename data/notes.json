@@ -1,33 +1,41 @@
 [
     {
-        "id": "473",
-        "type": "note-txt",
-        "isPinned": "false",
-        "info": {
-            "txt": "Add your story ..."
-        }
-    },
-    {
         "id": "217",
         "type": "note-img",
         "isPinned": "false",
         "info": {
-            "url": "https://picsum.photos/200",
-            "title": "Add your story ..."
+            "url": "../img/giphy.gif",
+            "title": "Surprise! Let's party"
         },
         "style": {
             "backgroundColor": "#f391e3"
         }
     },
     {
+        "id": "473",
+        "type": "note-txt",
+        "isPinned": "false",
+        "info": {
+            "txt": "Hope we make you laugh 😎..."
+        }
+    },
+        {
         "id": "623",
         "type": "note-todos",
         "isPinned": "false",
         "info": {
-            "label": "Get my stuff together",
+            "label": "Ingredients for a good life:",
             "todos": [
                 {
-                    "txt": "Driving lisence",
+                    "txt": "Believe in God",
+                    "donAt": "187111111"
+                },
+                {
+                    "txt": "Eat well",
+                    "donAt": "187111111"
+                },
+                {
+                    "txt": "And celebrate every success!",
                     "donAt": "187111111"
                 }
             ]
@@ -38,7 +46,7 @@
         "type": "note-txt",
         "isPinned": "true",
         "info": {
-            "txt": "Start to use notes!"
+            "txt": "Start to belive us!"
         }
     },
     {
@@ -46,14 +54,26 @@
         "type": "note-img",
         "isPinned": "false",
         "info": {
-            "url": "https://picsum.photos/200",
-            "title": "hi user"
+            "url": "../img/cowgif.webp",
+            "title": "Sorry for disappoint you  🎉"
         },
         "style": {
             "backgroundColor": "#f391e3"
         }
     },
-    {
+        {
+        "id": "552",
+        "type": "note-img",
+        "isPinned": "false",
+        "info": {
+            "url": "../img/bobogif.webp",
+            "title": "dud get a nap, you earned it!"
+        },
+        "style": {
+            "backgroundColor": "#f391e3"
+        }
+    },
+        {
         "id": "811",
         "type": "note-todos",
         "isPinned": "false",
