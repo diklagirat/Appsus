@@ -1,14 +1,34 @@
+import noteList from "../cmps/note-list.cmp.js"
+import { noteService } from "../services/note.service.js"
+
 export default {
     template: `
             <section class="keep-app">
                 <h1>Welcom to Keep app!</h1>
+               <note-list :notes="notesToShow"/>
             </section>
 `,
-    data() {
-        return {};
+    components: {
+        noteList,
     },
-    created() { },
+    data() {
+        return {
+            notes: null
+        };
+    },
+    created() {
+        // get all notes from server
+        noteService.query()
+            .then(
+                notes => this.notes = notes)
+            .catch(err => {
+                console.log(err)
+            })
+    },
     methods: {},
-    computed: {},
-    unmounted() { },
+    computed: {
+        notesToShow() {
+            return this.notes
+        },
+    },
 }
