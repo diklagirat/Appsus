@@ -30,6 +30,7 @@ function get(noteId) {
 }
 
 function remove(noteId) {
+    console.log(noteId)
     return storageService.remove(NOTES_KEY, noteId)
 }
 

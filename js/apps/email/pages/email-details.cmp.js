@@ -15,6 +15,8 @@ export default {
         }
     },
     created() {
+        const { emailId } = this.$route.params
+        console.log('id', emailId)
     },
     methods: {},
     computed: {
@@ -26,9 +28,10 @@ export default {
     watch: {
         '$route.params.emailId': {
             handler() {
-                const id = this.$route.params.emailId
-                emailService.get(id).then(email => {
-                    this.email = email
+                const emailId = this.$route.params
+                emailService.get(emailId).then(email => {
+
+                    console.log('this.email', email)
                 })
             },
             immediate: true

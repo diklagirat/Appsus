@@ -26,15 +26,15 @@ export default {
     },
     created() { },
     methods: {
-       openPreview(){
-        if (!this.isOpen) {
-           console.log('open view')
-           this.isOpen = true
-        } else {
-            console.log('close view')
-            this.isOpen = false
+        openPreview() {
+            if (!this.isOpen) {
+                console.log('open view')
+                this.isOpen = true
+            } else {
+                console.log('close view')
+                this.isOpen = false
+            }
         }
-       }
     },
     computed: {},
     unmounted() { },

@@ -1,5 +1,7 @@
 import notePreview from './note-preview.cmp.js'
 import noteDetails from '../pages/note-details.cmp.js';
+import { noteService } from "../../keep/services/note.service.js"
+import { showSuccessMsg, showErrorMsg } from "./../../../services/eventBus-service.js"
 export default {
     props: ['notes'],
     template: `
@@ -10,7 +12,10 @@ export default {
                             <note-preview :note="note" @click="select(note)"/>
                         </li>
                     </ul>
-                    <note-details v-if="selectedNote" :note="selectedNote"></note-details>
+                    <note-details v-if="selectedNote" :note="selectedNote" 
+                            @remove="$emit('remove',$event)"
+                            @pinNote="$emit('setPin', $event)"
+                            @editNote="$emit('edit', $event)"></note-details>
             </div>
             </section>
 `,
@@ -22,7 +27,7 @@ export default {
     data() {
         return {
             isShowList: false,
-            selectedNote: null
+            selectedNote: null,
         };
     },
     methods: {
@@ -33,7 +38,7 @@ export default {
         moveToDetails(noteId) {
             console.log('moveToDetails clicked', noteId)
             this.$router.push('/note/' + noteId)
-        }
+        },
     },
     computed: {
 
