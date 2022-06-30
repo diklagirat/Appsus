@@ -1,4 +1,4 @@
-// todo: fixing sentAt (date presentation)
+
 
 export default {
     props: ['email'],
@@ -14,6 +14,9 @@ export default {
                 <p>{{sentAt}}</p>
             </div>
         </section>
+        <div class="email-preview">
+            <h1>Hello</h1>
+        </div>
 `,
     data() {
         return {}
@@ -23,7 +26,7 @@ export default {
     computed: {
         sentAt() {
             const { sentAt } = this.email
-            return new Date(sentAt)
+            return new Date(+sentAt).toDateString()
         }
     },
     unmounted() { },
