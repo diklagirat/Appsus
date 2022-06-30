@@ -15,6 +15,7 @@ export default {
         }
     },
     created() {
+<<<<<<< HEAD
 
         const { emailId } = this.$route.params
         emailService.get(emailId)
@@ -32,6 +33,10 @@ export default {
             this.email.isRead = true
             emailService.save(this.email)
         }
+=======
+        const { emailId } = this.$route.params
+        console.log('id', emailId)
+>>>>>>> 60ea17e832323e1cd668d7b7ce1e0ad7bac014df
     },
     computed: {
         sentAt() {
@@ -39,6 +44,7 @@ export default {
             return new Date(+sentAt).toDateString()
         }
     },
+<<<<<<< HEAD
     // watch: {
     //     '$route.params.emailId': {
     //         handler() {
@@ -53,6 +59,19 @@ export default {
     //         },
     //         immediate: true
     //     }
+=======
+    watch: {
+        '$route.params.emailId': {
+            handler() {
+                const emailId = this.$route.params
+                emailService.get(emailId).then(email => {
+
+                    console.log('this.email', email)
+                })
+            },
+            immediate: true
+        }
+>>>>>>> 60ea17e832323e1cd668d7b7ce1e0ad7bac014df
 
     // },
     unmounted() { },

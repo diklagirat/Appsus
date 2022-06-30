@@ -1,12 +1,11 @@
 import noteTxt from "../cmps/dynamic-cmp/note-txt.cmp.js"
 import noteImg from "../cmps/dynamic-cmp/note-img.cmp.js"
 import noteTodos from "../cmps/dynamic-cmp/note-todos.cmp.js"
-
 export default {
     props: ['note'],
     template: `
     <section class="note-details">
-        <div class="note-detail-card" v-if="note">
+        <div class="note-detail-card" v-if="note" v-if="isShowEditBtn">
                 <div>
                     <button class="pin-btn">Pin</button>
                     <button class="close-btn">X</button>
@@ -15,7 +14,7 @@ export default {
                         <component :is="note.type" :info="note.info"  :id="note.id" >
                         </component> 
                 </div>
-                <div class="edit-btn-container" v-if="isShowEditBtn">
+                <div class="edit-btn-container" >
                      <i @click="sendEmail" class="fas fa-paper-plane"></i>
                     <i @click="setColor" class="fas fa-palette"></i>
                     <i @click="pinNote" class="fas fa-thumbtack"></i>
@@ -48,12 +47,14 @@ export default {
         },
         pinNote() {
             console.log('pin note..')
+            this.$emit('pinNote', this.note.id)
         },
         editNote() {
             console.log('edit note..')
+            this.$emit('editNote', this.note.id)
         },
         removeNote() {
-            console.log('remove note..')
+            this.$emit('remove', this.note.id)
         }
     },
     computed: {
