@@ -1,0 +1,13 @@
+.note-details{
+    position: absolute;     
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.note-detail-card{
+    background-color: aliceblue;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 26%);
+    padding: 1rem;
+}
