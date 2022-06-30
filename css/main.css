@@ -5,6 +5,8 @@
 @import url('./apps//keep/note-preview.css');
 @import url('./apps/email/email-list.css');
 @import url('./apps/email/email-preview.css');
+@import url('./apps/email/email-folder-list.css');
+
 * {
     box-sizing: border-box;
 }

@@ -1,6 +1,6 @@
 import emailPreview from "./email-preview.cmp.js"
 
-// todo: implement a mini-preview with a flag on the model (not in here) - later' when have time
+// todo: implement a mini-preview with a flag on the model (not in here) - later, when i have time
 
 export default {
     name: 'email-list',
@@ -26,13 +26,9 @@ export default {
             isOpen: false
         }
     },
-<<<<<<< HEAD
     created() {
 
     },
-=======
-    created() { },
->>>>>>> 60ea17e832323e1cd668d7b7ce1e0ad7bac014df
     methods: {
         openPreview() {
             if (!this.isOpen) {
@@ -42,24 +38,11 @@ export default {
                 console.log('close view')
                 this.isOpen = false
             }
-<<<<<<< HEAD
         },
 
     },
     computed: {
-        // setRead() {
-        //     console.log('unread')
-        //     console.log('this.email:', this.email)
-        //     if (this.email.isRead) {
-        //         return ''
-        //     }
-        //     else {
-        //         return 'unread'
-        //     }
-        // },
-=======
-        }
->>>>>>> 60ea17e832323e1cd668d7b7ce1e0ad7bac014df
+       
     },
     unmounted() { },
 }
