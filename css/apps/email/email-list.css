@@ -1,15 +1,19 @@
 .emails-list {
     text-align: center;
-    width: 100%;
 }
 
 .table {
     display: table;
-    background-color: rgb(241, 202, 202);
 }
 
 .email-preview-card {
-    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 26%);
+    padding: 1rem;
+    list-style-type: none;
+    text-align: center;
+    text-transform: capitalize;
+
 }
 
 .row {
