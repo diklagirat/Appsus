@@ -18,7 +18,7 @@ export default {
     data() {
         return {
             emails: null,
-            userEmail: null
+            userEmail: 'user@appsus.com'
         }
     },
     created() {
@@ -35,9 +35,10 @@ export default {
             return this.emails
         },
         emailsInInbox() {
-            const emailsInInbox = emails.filter(email => (email.to === userEmail))
+            // return this.emails.length
+            const emailsInInbox = this.emails.filter(email => (email.isRead === false))
+            console.log('emailsInInbox.length:',emailsInInbox.length)
             return emailsInInbox.length
-
         }
     },
     unmounted() { },
