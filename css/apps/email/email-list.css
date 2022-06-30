@@ -8,8 +8,21 @@
 
 .email-preview-card {
     list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .row {
     border-bottom: 1px solid gray;
+}
+
+.unread {
+    display: block;
+    font-size: 1em;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
 }

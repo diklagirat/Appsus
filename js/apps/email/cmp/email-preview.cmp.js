@@ -3,7 +3,7 @@
 export default {
     props: ['email'],
     template: `
-        <section class="email-preview">
+        <section class="email-preview" >
             <div class="cell sender">
                 <p>{{email.to}}</p>
             </div>
@@ -14,9 +14,9 @@ export default {
                 <p>{{sentAt}}</p>
             </div>
         </section>
-        <div class="email-preview">
+        <!-- <div class="email-preview">
             <h1>Hello</h1>
-        </div>
+        </div> -->
 `,
     data() {
         return {}
@@ -27,7 +27,8 @@ export default {
         sentAt() {
             const { sentAt } = this.email
             return new Date(+sentAt).toDateString()
-        }
+        },
+
     },
     unmounted() { },
 }

@@ -15,25 +15,45 @@ export default {
         }
     },
     created() {
+
+        const { emailId } = this.$route.params
+        emailService.get(emailId)
+            .then(email => {
+                this.email = email
+                this.updateEmail()
+            })
+
+
+
     },
-    methods: {},
+    methods: {
+        updateEmail(){
+            console.log('this.email:',this.email)
+            this.email.isRead = true
+            emailService.save(this.email)
+        }
+    },
     computed: {
         sentAt() {
             const { sentAt } = this.email
             return new Date(+sentAt).toDateString()
         }
     },
-    watch: {
-        '$route.params.emailId': {
-            handler() {
-                const id = this.$route.params.emailId
-                emailService.get(id).then(email => {
-                    this.email = email
-                })
-            },
-            immediate: true
-        }
+    // watch: {
+    //     '$route.params.emailId': {
+    //         handler() {
+    //             const id = this.$route.params.emailId
+    //             emailService.get(id).then(email => {
+    //                 this.email = email
+                    
+    //                 // console.log('email:',email)
+    //                 email.isRead = !email.isRead
+    //                 emailService.save(email)
+    //             })
+    //         },
+    //         immediate: true
+    //     }
 
-    },
+    // },
     unmounted() { },
 }

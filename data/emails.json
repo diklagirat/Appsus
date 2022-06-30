@@ -3,7 +3,7 @@
         "id": "e101",
         "subject": "Miss you!",
         "body": "Would love to catch up sometimes",
-        "isRead": "false",
+        "isRead": false,
         "sentAt": "1551133930594",
         "to": "mylove@husband.com"
     },
@@ -11,7 +11,7 @@
         "id": "e102",
         "subject": "Where are you?",
         "body": "Would love to catch up sometimes",
-        "isRead": "false",
+        "isRead": false,
         "sentAt": "1651133930594",
         "to": "dikla@codingacademy.com"
     },
@@ -19,7 +19,7 @@
         "id": "e103",
         "subject": "The best sprint in the Course!",
         "body": "Would love to catch up sometimes",
-        "isRead": "false",
+        "isRead": false,
         "sentAt": "1661133930594",
         "to": "tal@codingacademy.com"
     },
@@ -27,7 +27,7 @@
         "id": "e104",
         "subject": "Your application",
         "body": "Would love to catch up sometimes",
-        "isRead": "false",
+        "isRead": false,
         "sentAt": "1551133930594",
         "to": "matan@codingacademy.com"
     }
