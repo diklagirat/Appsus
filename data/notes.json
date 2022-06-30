@@ -4,7 +4,7 @@
         "type": "note-img",
         "isPinned": "false",
         "info": {
-            "url": "../img/giphy.gif",
+            "url": "img/giphy.gif",
             "title": "Surprise! Let's party"
         },
         "style": {
@@ -54,7 +54,7 @@
         "type": "note-img",
         "isPinned": "false",
         "info": {
-            "url": "../img/cowgif.webp",
+            "url": "img/cowgif.webp",
             "title": "Sorry for disappoint you  🎉"
         },
         "style": {
@@ -66,7 +66,7 @@
         "type": "note-img",
         "isPinned": "false",
         "info": {
-            "url": "../img/bobogif.webp",
+            "url": "img/bobogif.webp",
             "title": "dud get a nap, you earned it!"
         },
         "style": {
