@@ -1,31 +1,3 @@
-<<<<<<< HEAD
-export default {
-    props: ['note'],
-    template: `
-        <section>
-                <component :is="note.type" :info="note.info">
-                </component> 
-        </section>
-`,
-    components: {
-        noteTxt,
-        noteImg,
-        noteTodos,
-        noteDetails,
-    },
-    created() {
-    },
-    data() {
-        return {
-        };
-    },
-    methods: {
-
-    },
-    computed: {
-
-    },
-=======
 import { emailService } from '../services/email.service.js'
 
 export default {
@@ -43,7 +15,7 @@ export default {
         }
     },
     created() {
-     },
+    },
     methods: {},
     computed: {
         sentAt() {
@@ -64,5 +36,4 @@ export default {
 
     },
     unmounted() { },
->>>>>>> c376bda6e039eaf59614155a1c49f8ba47759753
 }
