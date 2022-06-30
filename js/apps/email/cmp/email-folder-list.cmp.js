@@ -3,8 +3,8 @@ export default {
     template: `
         <section class="email-folder-list">
             <div class="">
-                <p>Inbox: {{emails}}</p>
-
+                <p>Inbox: ({{emails}})</p>
+                <i class="fas fa-external-link"></i>
             </div>
             <div class="">
                 <p>Starred</p>

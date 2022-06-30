@@ -6,9 +6,8 @@ import emailFolderList from '../cmp/email-folder-list.cmp.js'
 export default {
     template: `
         <section class="email-app">
-            <h1>Welcome to Email app!</h1>
-            <email-list :emails="emailsToShow"/>
             <email-folder-list :emails="emailsInInbox"/>
+            <email-list :emails="emailsToShow"/>
         </section>
 `,
     components: {
@@ -35,11 +34,9 @@ export default {
             return this.emails
         },
         emailsInInbox() {
-            // return this.emails.length
-            const emailsInInbox = this.emails.filter(email => (email.isRead === false))
-            console.log('emailsInInbox.length:',emailsInInbox.length)
-            return emailsInInbox.length
-        }
+            if (!this.emails || !this.emails.length) return this.emails
+            return this.emails.filter(email => (email.isRead === false)).length
+        },
     },
     unmounted() { },
 }
