@@ -15,7 +15,6 @@ export default {
         }
     },
     created() {
-<<<<<<< HEAD
 
         const { emailId } = this.$route.params
         emailService.get(emailId)
@@ -28,15 +27,11 @@ export default {
 
     },
     methods: {
-        updateEmail(){
-            console.log('this.email:',this.email)
+        updateEmail() {
+            console.log('this.email:', this.email)
             this.email.isRead = true
             emailService.save(this.email)
         }
-=======
-        const { emailId } = this.$route.params
-        console.log('id', emailId)
->>>>>>> 60ea17e832323e1cd668d7b7ce1e0ad7bac014df
     },
     computed: {
         sentAt() {
@@ -44,14 +39,13 @@ export default {
             return new Date(+sentAt).toDateString()
         }
     },
-<<<<<<< HEAD
     // watch: {
     //     '$route.params.emailId': {
     //         handler() {
     //             const id = this.$route.params.emailId
     //             emailService.get(id).then(email => {
     //                 this.email = email
-                    
+
     //                 // console.log('email:',email)
     //                 email.isRead = !email.isRead
     //                 emailService.save(email)
@@ -59,19 +53,6 @@ export default {
     //         },
     //         immediate: true
     //     }
-=======
-    watch: {
-        '$route.params.emailId': {
-            handler() {
-                const emailId = this.$route.params
-                emailService.get(emailId).then(email => {
-
-                    console.log('this.email', email)
-                })
-            },
-            immediate: true
-        }
->>>>>>> 60ea17e832323e1cd668d7b7ce1e0ad7bac014df
 
     // },
     unmounted() { },
