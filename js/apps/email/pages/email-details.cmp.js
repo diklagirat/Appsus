@@ -24,8 +24,8 @@ export default {
             })
     },
     methods: {
-        updateEmail(){
-            console.log('this.email:',this.email)
+        updateEmail() {
+            console.log('this.email:', this.email)
             this.email.isRead = true
             emailService.save(this.email)
         }
