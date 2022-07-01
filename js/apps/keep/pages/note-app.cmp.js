@@ -27,8 +27,22 @@ export default {
             })
     },
     methods: {
-        setNoteTitle({ updatedtxt, noteType }) {
-            console.log('APP', updatedtxt, noteType)
+        setNoteTitle({ updatedtxt, noteType, noteId }) {
+            console.log('APP', updatedtxt, noteType, noteId)
+            const noteToUpdate = this.notes.find((note) => note.id === noteId)
+
+            if (noteType === 'note-txt') noteToUpdate.info.txt = updatedtxt
+            else if (noteType === 'note-img') noteToUpdate.info.title = updatedtxt
+            else noteToUpdate.info.label = updatedtxt
+
+            noteService.save(noteToUpdate)
+                .then((note) => {
+                    this.note = note
+                    console.log(' Note title Update successfully', this.notes)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
         },
         removeNote(noteId) {
             console.log('delete APP', noteId)
@@ -36,7 +50,7 @@ export default {
                 .then(() => {
                     const idx = this.notes.findIndex((note) => note.id === noteId)
                     this.notes.splice(idx, 1)
-                    console.log('Deleted successfully')
+                    // console.log('Deleted successfully')
                 }).catch(err => {
                     console.log(err)
                 })
@@ -50,7 +64,7 @@ export default {
             noteService.save(noteToUpdate)
                 .then((note) => {
                     this.note = note
-                    console.log('Update successfully', this.notes)
+                    // console.log('Note Pin Update successfully', this.notes)
                 })
                 .catch(err => {
                     console.log(err)

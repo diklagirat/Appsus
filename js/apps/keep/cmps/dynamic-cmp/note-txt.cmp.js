@@ -3,13 +3,13 @@ export default {
     props: ["info"],
     template: `
         <section class="note-txt-container">
-            <h4 contenteditable="true" @blur="reportVal">{{info.txt}}</h4>
+            <h4 contenteditable="true" @blur="setTitle">{{info.txt}}</h4>
             </section>
 `,
     methods: {
-        reportVal(ev) {
+        setTitle(ev) {
             const updatedtxt = ev.target.innerText
-            this.$emit("setVal", updatedtxt, 'note-txt')
+            this.$emit("setTitle", updatedtxt, 'note-txt')
         }
     },
 }
