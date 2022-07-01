@@ -6,7 +6,8 @@ import addEmail from '../cmp/add-email.cmp.js'
 export default {
     template: `
         <section class="email-app">
-            <add-email />
+            <button @click="composeEmail" ><i class="fas fa-plus"></i> Compose</button>
+            <add-email v-if="isComposedEmail" @added="addEmail"/>
             <email-folder-list :emails="emailsInInbox"/>
             <email-list :emails="emailsToShow"/>
         </section>
@@ -18,8 +19,11 @@ export default {
     },
     data() {
         return {
+            isComposedEmail: false,
             emails: null,
-            userEmail: 'user@appsus.com'
+            userEmail: 'user@appsus.com',
+            nextId: 105,
+            newEmail: null,
         }
     },
     created() {
@@ -30,8 +34,31 @@ export default {
         //Get user email from server
 
     },
-    methods: {},
+    methods: {
+        composeEmail() {
+            this.isComposedEmail = !this.isComposedEmail
+            console.log('Compose email')
+        },
+        addEmail(email){
+            console.log('email:',email)
+            this.newEmail = {
+                subject: email.subject,
+                body: email.body,
+                isRead: false,
+                sentAt: new Date().toDateString(),
+                to: email.to
+            }
+            // email.id = 'e' + this.nextId++
+            // email.isRead = false
+            // email.sendAt = new Date().toDateString()
+            console.log('adding email', this.newEmail)
+            this.emails.unshift(this.newEmail)
+            console.log('this.emails:',this.emails)
+            emailService.save(this.newEmail)
+        }
+    },
     computed: {
+     
         emailsToShow() {
             return this.emails
         },

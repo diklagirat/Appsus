@@ -2,30 +2,37 @@ export default {
     name: 'add-email',
     template: `
         <section class="add-email">
-            <button @click="composeEmail"><i class="fas fa-plus"></i> Compose</button>
-            <div v-if="isComposedEmail" class="new-email-container">
+            <div class="new-email-container">
                 <h1>New Email</h1>
-                <form @submit.prevent="add">
+                <form @submit.prevent=add> 
                     <label>To</label>
-                    <input type="email" name="" id="" >
+                    <input type="email" name="email-to" id="email-to" v-model="newEmail.to" required>
+
+                    <label>Subject</label>
+                    <input type="text" name="subject" id="subject" v-model="newEmail.subject">
+
+                    <textarea name="email-body" id="email-body" cols="100" rows="30" v-model="newEmail.body"></textarea>
+
+                    <button>Send</button>
+
                 </form>
             </div>
         </section>
 `,
     data() {
         return {
-            isComposedEmail: false,
-            // newEmail: {
-            //     to: '',
-            // }
+            newEmail: {
+                to: '',
+                subject: '',
+                body: '',
+            }
         }
     },
-    created() { 
+    created() {
     },
     methods: {
-        composeEmail() {
-            this.isComposedEmail = !this.isComposedEmail
-            console.log('Compose email')
+        add(){
+            this.$emit('added', this.newEmail)
         }
     },
     computed: {},
