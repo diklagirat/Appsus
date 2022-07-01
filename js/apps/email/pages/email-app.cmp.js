@@ -12,8 +12,8 @@ export default {
         <section class="email-app">
             <button @click="composeEmail" ><i class="fas fa-plus"></i> Compose</button>
             <email-filter @filtered="setFilter"/>
-            <add-email v-if="isComposedEmail" @added="addEmail" @sended="sendEmail"/>
-            <email-folder-list :emails="emailsInInbox"/>
+            <add-email v-if="isComposedEmail" @added="addEmail"/>
+            <email-folder-list :emails="emailsInInbox" @filtered="setFilter"/>
             <email-list :emails="emailsToShow"/>
         </section>
 `,
@@ -51,31 +51,33 @@ export default {
             this.isComposedEmail = true
         },
         addEmail(email) {
+            console.log('email.to:',email.to)
+            var emailBox = 'inbox'
+            if (email.to === this.userEmail) emailBox = 'sent'
             this.newEmail = {
                 subject: email.subject,
                 body: email.body,
                 isRead: false,
                 sentAt: new Date().toDateString(),
-                to: email.to
+                to: email.to,
+                emailBox,
             }
             this.emails.unshift(this.newEmail)
             emailService.save(this.newEmail)
-            console.log('newEmail:',newEmail)
-        },
-        sendEmail(){
             this.isComposedEmail = false
         },
         setFilter(filterBy) {
             this.filterBy = filterBy
+            console.log('this.filterBy:',this.filterBy)
         }
     },
     computed: {
         emailsToShow() {
             var emails = this.emails
-            if (this.filterBy) {
-                if (this.filterBy === 'Read') {
+            if (this.filterBy?.read) {
+                if (this.filterBy.read === 'Read') {
                     emails = emails.filter(email => email.isRead === true)
-                } else if (this.filterBy === 'Unread') {
+                } else if (this.filterBy.read === 'Unread') {
                     emails = emails.filter(email => email.isRead === false)
                 }
             }
