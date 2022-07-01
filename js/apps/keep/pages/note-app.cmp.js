@@ -5,10 +5,10 @@ export default {
             <section class="keep-app">
                <note-list :notes="notesToShow"
                             @remove="removeNote"
-                            @edit="editNote"
                             @setPin="setPinNote"
                             @setNoteTitle="setNoteTitle"
-                            @setNoteTodo="setNoteTodo"/>
+                            @setNoteTodo="setNoteTodo"
+                            @setNoteColor="setNoteColor"/>
             </section>
 `,
     components: {
@@ -29,7 +29,6 @@ export default {
     },
     methods: {
         setNoteTodo({ updatedTodotxt, todoIdx, noteId }) {
-            console.log('APP-setNoteTodoTxt', updatedTodotxt, todoIdx, noteId)
             let noteToUpdate = this.notes.find((note) => note.id === noteId)
             noteToUpdate.info.todos[todoIdx].txt = updatedTodotxt
             noteService.save(noteToUpdate)
@@ -42,7 +41,6 @@ export default {
                 })
         },
         setNoteTitle({ updatedtxt, noteType, noteId }) {
-            console.log('APP', updatedtxt, noteType, noteId)
             const noteToUpdate = this.notes.find((note) => note.id === noteId)
 
             if (noteType === 'note-txt') noteToUpdate.info.txt = updatedtxt
@@ -59,18 +57,14 @@ export default {
                 })
         },
         removeNote(noteId) {
-            console.log('delete APP', noteId)
             noteService.remove(noteId)
                 .then(() => {
                     const idx = this.notes.findIndex((note) => note.id === noteId)
                     this.notes.splice(idx, 1)
-                    // console.log('Deleted successfully')
+                    console.log('Deleted successfully')
                 }).catch(err => {
                     console.log(err)
                 })
-        },
-        editNote(noteId) {
-            console.log('edit APP', noteId)
         },
         setPinNote(noteId) {
             const noteToUpdate = this.notes.find((note) => note.id === noteId)
@@ -83,7 +77,20 @@ export default {
                 .catch(err => {
                     console.log(err)
                 })
-        }
+        },
+        setNoteColor({ color, noteId }) {
+            let noteToUpdate = this.notes.find((note) => note.id === noteId)
+            console.log(color)
+            noteToUpdate.style.backgroundColor = color
+            noteService.save(noteToUpdate)
+                .then((note) => {
+                    this.note = note
+                    // console.log('Note Pin Update successfully', this.notes)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        },
     },
     computed: {
         notesToShow() {

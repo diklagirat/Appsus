@@ -8,7 +8,7 @@
             "title": "Surprise! Let's party"
         },
         "style": {
-            "backgroundColor": "#f391e3"
+            "backgroundColor": "rgb(240, 229, 183)"
         }
     },
     {
@@ -20,7 +20,7 @@
             "title": "dud get a nap, you earned it!"
         },
         "style": {
-            "backgroundColor": "#f391e3"
+            "backgroundColor": "rgb(166, 199, 239)"
         }
     },
     {
@@ -29,6 +29,9 @@
         "isPinned": false,
         "info": {
             "txt": "Hope we make you laugh 😎..."
+        },
+        "style": {
+            "backgroundColor": "gb(166, 199, 239)"
         }
     },
         {
@@ -51,6 +54,9 @@
                     "donAt": 187111111
                 }
             ]
+        },
+         "style": {
+            "backgroundColor": "none"  
         }
     },
     {
@@ -59,6 +65,9 @@
         "isPinned": true,
         "info": {
             "txt": "Start to belive us!"
+        },
+         "style": {
+            "backgroundColor": "none"  
         }
     },
     {
@@ -70,7 +79,7 @@
             "title": "Sorry for disappoint you  🎉"
         },
         "style": {
-            "backgroundColor": "#f391e3"
+            "backgroundColor": "rgb(240, 229, 183)"
         }
     },
         {
@@ -93,6 +102,9 @@
                     "donAt": 12313311
                 }
             ]
+        },
+         "style": {
+            "backgroundColor": "none"  
         }
     },
         {
@@ -104,7 +116,7 @@
             "title": "dud get a nap, you earned it!"
         },
         "style": {
-            "backgroundColor": "#f391e3"
+            "backgroundColor": "rgb(166, 199, 239)"  
         }
     },
      {
@@ -116,7 +128,7 @@
             "title": "Lorem go to level high"
         },
         "style": {
-            "backgroundColor": "#f391e3"
+            "backgroundColor": "rgb(162, 171, 155)"
         }
     },
     {
@@ -125,6 +137,9 @@
         "isPinned": false,
         "info": {
             "txt": "Back home lorem i"
+        },
+         "style": {
+            "backgroundColor": "none"  
         }
     },
     {
@@ -136,7 +151,7 @@
             "title": "Lorem go to level high"
         },
         "style": {
-            "backgroundColor": "#f391e3"
+            "backgroundColor": "rgb(162, 171, 155)"
         }
     },
       {
@@ -145,6 +160,9 @@
         "isPinned": true,
         "info": {
             "txt": "Start to belive us!"
+        },
+         "style": {
+            "backgroundColor": "none"  
         }
     },
       {
@@ -153,6 +171,9 @@
         "isPinned": true,
         "info": {
             "txt": "Start to belive us!"
+        },
+         "style": {
+            "backgroundColor": "none"  
         }
     }
 ]
