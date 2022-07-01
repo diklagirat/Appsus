@@ -10,8 +10,9 @@ export default {
                     <button class="close-btn" >X</button>
                 </div>
                 <div>
-                        <component :is="note.type" :info="note.info"  :id="note.id" @setVal="setVal">
-                        </component> 
+                        <component :is="note.type" :info="note.info"  :id="note.id" 
+                                                    @setTitle="setTitle"
+                                                    @setTodoTxt="setNoteTodoTxt"></component> 
                 </div>
                 <div class="edit-btn-container">
                      <i @click="sendEmail" class="fas fa-paper-plane"></i>
@@ -36,8 +37,13 @@ export default {
         noteTodos,
     },
     methods: {
-        setVal(updatedtxt, noteType) {
-            this.$emit('updateNoteTxt', { updatedtxt, noteType })
+        setNoteTodoTxt(updatedTodotxt, todoIdx) {
+            const noteId = this.note.id
+            this.$emit('setNoteTodoTxt', { updatedTodotxt, todoIdx, noteId })
+        },
+        setTitle(updatedtxt, noteType) {
+            const noteId = this.note.id
+            this.$emit('updateNoteTxt', { updatedtxt, noteType, noteId })
         },
         sendEmail() {
             console.log('send Email..')
