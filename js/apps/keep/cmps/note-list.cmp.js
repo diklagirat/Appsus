@@ -15,7 +15,8 @@ export default {
                             @remove="$emit('remove',$event)"
                             @pinNote="$emit('setPin', $event)"
                             @editNote="$emit('edit', $event)"
-                            @updateNoteTxt="$emit('setNoteTitle', $event)"></note-details>
+                            @updateNoteTxt="$emit('setNoteTitle', $event)"
+                            @setNoteTodoTxt="$emit('setNoteTodo',$event)"></note-details>
             </div>
             </section>
 `,

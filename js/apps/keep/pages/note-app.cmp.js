@@ -7,7 +7,8 @@ export default {
                             @remove="removeNote"
                             @edit="editNote"
                             @setPin="setPinNote"
-                            @setNoteTitle="setNoteTitle"/>
+                            @setNoteTitle="setNoteTitle"
+                            @setNoteTodo="setNoteTodo"/>
             </section>
 `,
     components: {
@@ -27,6 +28,19 @@ export default {
             })
     },
     methods: {
+        setNoteTodo({ updatedTodotxt, todoIdx, noteId }) {
+            console.log('APP-setNoteTodoTxt', updatedTodotxt, todoIdx, noteId)
+            let noteToUpdate = this.notes.find((note) => note.id === noteId)
+            noteToUpdate.info.todos[todoIdx].txt = updatedTodotxt
+            noteService.save(noteToUpdate)
+                .then((note) => {
+                    this.note = note
+                    console.log(' Note Todo txt Update successfully', this.notes)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        },
         setNoteTitle({ updatedtxt, noteType, noteId }) {
             console.log('APP', updatedtxt, noteType, noteId)
             const noteToUpdate = this.notes.find((note) => note.id === noteId)
