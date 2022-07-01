@@ -3,6 +3,9 @@ import emailList from '../cmp/email-list.cmp.js'
 import emailFolderList from '../cmp/email-folder-list.cmp.js'
 import addEmail from '../cmp/add-email.cmp.js'
 
+//TODO: Fix newEmail date presentation
+// TODO: Show last email as the first email
+
 export default {
     template: `
         <section class="email-app">
@@ -48,9 +51,7 @@ export default {
                 sentAt: new Date().toDateString(),
                 to: email.to
             }
-            // email.id = 'e' + this.nextId++
-            // email.isRead = false
-            // email.sendAt = new Date().toDateString()
+    
             console.log('adding email', this.newEmail)
             this.emails.unshift(this.newEmail)
             console.log('this.emails:',this.emails)

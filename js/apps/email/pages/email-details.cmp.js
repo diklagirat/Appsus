@@ -7,6 +7,9 @@ export default {
             <h1>Subject: {{email.subject}}</h1>
             <h1>{{sentAt}}</h1>
             <p>{{email.body}}</p>
+            <div class="edit-btn-container">
+                <button @click="deleteEmail(email.id)"><i class="fas fa-trash"></i></button>
+            </div>
         </section>
 `,
     data() {
@@ -28,6 +31,9 @@ export default {
             console.log('this.email:', this.email)
             this.email.isRead = true
             emailService.save(this.email)
+        },
+        deleteEmail(emailId){
+            console.log('delete email', emailId);
         }
     },
     computed: {
