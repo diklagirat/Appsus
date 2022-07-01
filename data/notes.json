@@ -2,10 +2,22 @@
     {
         "id": "217",
         "type": "note-img",
-        "isPinned": "false",
+        "isPinned": true,
         "info": {
-            "url": "img/giphy.gif",
+            "url": "img/chil.jpeg",
             "title": "Surprise! Let's party"
+        },
+        "style": {
+            "backgroundColor": "#f391e3"
+        }
+    },
+    {
+        "id": "552",
+        "type": "note-img",
+        "isPinned": false,
+        "info": {
+            "url": "img/chilgod.jpeg",
+            "title": "dud get a nap, you earned it!"
         },
         "style": {
             "backgroundColor": "#f391e3"
@@ -14,7 +26,7 @@
     {
         "id": "473",
         "type": "note-txt",
-        "isPinned": "false",
+        "isPinned": false,
         "info": {
             "txt": "Hope we make you laugh 😎..."
         }
@@ -22,21 +34,21 @@
         {
         "id": "623",
         "type": "note-todos",
-        "isPinned": "false",
+        "isPinned": false,
         "info": {
             "label": "Ingredients for a good life:",
             "todos": [
                 {
                     "txt": "Believe in God",
-                    "donAt": "187111111"
+                    "donAt": 187111111
                 },
                 {
                     "txt": "Eat well",
-                    "donAt": "187111111"
+                    "donAt": 187111111
                 },
                 {
                     "txt": "And celebrate every success!",
-                    "donAt": "187111111"
+                    "donAt": 187111111
                 }
             ]
         }
@@ -44,7 +56,7 @@
     {
         "id": "591",
         "type": "note-txt",
-        "isPinned": "true",
+        "isPinned": true,
         "info": {
             "txt": "Start to belive us!"
         }
@@ -52,22 +64,10 @@
     {
         "id": "112",
         "type": "note-img",
-        "isPinned": "false",
+        "isPinned": false,
         "info": {
-            "url": "img/cowgif.webp",
+            "url": "img/dog.jpeg",
             "title": "Sorry for disappoint you  🎉"
-        },
-        "style": {
-            "backgroundColor": "#f391e3"
-        }
-    },
-        {
-        "id": "552",
-        "type": "note-img",
-        "isPinned": "false",
-        "info": {
-            "url": "img/bobogif.webp",
-            "title": "dud get a nap, you earned it!"
         },
         "style": {
             "backgroundColor": "#f391e3"
@@ -76,23 +76,83 @@
         {
         "id": "811",
         "type": "note-todos",
-        "isPinned": "false",
+        "isPinned": false,
         "info": {
             "label": "Market",
             "todos": [
                 {
                     "txt": "Buy milk",
-                    "donAt": "187111111"
+                    "donAt": 187111111
                 },
                 {
                     "txt": "Buy bread",
-                    "donAt": "187113311"
+                    "donAt": 187113311
                 },
                 {
                     "txt": "Buy cola",
-                    "donAt": "12313311"
+                    "donAt": 12313311
                 }
             ]
+        }
+    },
+        {
+        "id": "552",
+        "type": "note-img",
+        "isPinned": false,
+        "info": {
+            "url": "img/ochen.jpeg",
+            "title": "dud get a nap, you earned it!"
+        },
+        "style": {
+            "backgroundColor": "#f391e3"
+        }
+    },
+     {
+        "id": "903",
+        "type": "note-img",
+        "isPinned": true,
+        "info": {
+            "url": "img/trees.jpeg",
+            "title": "Lorem go to level high"
+        },
+        "style": {
+            "backgroundColor": "#f391e3"
+        }
+    },
+    {
+        "id": "555",
+        "type": "note-txt",
+        "isPinned": false,
+        "info": {
+            "txt": "Back home lorem i"
+        }
+    },
+    {
+        "id": "903",
+        "type": "note-img",
+        "isPinned": true,
+        "info": {
+            "url": "img/wine.jpeg",
+            "title": "Lorem go to level high"
+        },
+        "style": {
+            "backgroundColor": "#f391e3"
+        }
+    },
+      {
+        "id": "144",
+        "type": "note-txt",
+        "isPinned": true,
+        "info": {
+            "txt": "Start to belive us!"
+        }
+    },
+      {
+        "id": "441",
+        "type": "note-txt",
+        "isPinned": true,
+        "info": {
+            "txt": "Start to belive us!"
         }
     }
 ]

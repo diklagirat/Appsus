@@ -5,24 +5,21 @@ export default {
     props: ['note'],
     template: `
     <section class="note-details">
-        <div class="note-detail-card" v-if="note" v-if="isShowEditBtn">
+        <div class="note-detail-card" v-if="note">
                 <div>
-                    <button class="pin-btn">Pin</button>
-                    <button class="close-btn">X</button>
+                    <button class="close-btn" >X</button>
                 </div>
                 <div>
-                        <component :is="note.type" :info="note.info"  :id="note.id" >
+                        <component :is="note.type" :info="note.info"  :id="note.id" @setVal="setVal">
                         </component> 
                 </div>
-                <div class="edit-btn-container" >
+                <div class="edit-btn-container">
                      <i @click="sendEmail" class="fas fa-paper-plane"></i>
                     <i @click="setColor" class="fas fa-palette"></i>
                     <i @click="pinNote" class="fas fa-thumbtack"></i>
                     <i @click="editNote" class="fas fa-edit"></i>
                     <i @click="removeNote" class="fas fa-trash"></i>
                 </div>
-            
-            
         </div>
     </section>
 `,
@@ -30,7 +27,7 @@ export default {
     },
     data() {
         return {
-            isShowEditBtn: true
+            isShowEditBtn: true,
         };
     },
     components: {
@@ -39,6 +36,9 @@ export default {
         noteTodos,
     },
     methods: {
+        setVal(updatedtxt, noteType) {
+            this.$emit('updateNoteTxt', { updatedtxt, noteType })
+        },
         sendEmail() {
             console.log('send Email..')
         },
@@ -50,16 +50,12 @@ export default {
             this.$emit('pinNote', this.note.id)
         },
         editNote() {
-            console.log('edit note..')
+            console.log('edit note..', this.note)
             this.$emit('editNote', this.note.id)
         },
         removeNote() {
             this.$emit('remove', this.note.id)
         }
     },
-    computed: {
-
-    },
-
 }
 
