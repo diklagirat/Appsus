@@ -34,6 +34,7 @@ export default {
         },
         deleteEmail(emailId){
             console.log('delete email', emailId);
+            
         }
     },
     computed: {

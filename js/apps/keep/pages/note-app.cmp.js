@@ -1,14 +1,13 @@
 import noteList from "../cmps/note-list.cmp.js"
 import { noteService } from "../services/note.service.js"
-
-//TODO: add user msg to cmp 
 export default {
     template: `
             <section class="keep-app">
-               <note-list :notes="notesToShow" @updateNotes=updateNotes 
+               <note-list :notes="notesToShow"
                             @remove="removeNote"
                             @edit="editNote"
-                            @setPin="setPinNote"/>
+                            @setPin="setPinNote"
+                            @setNoteTitle="setNoteTitle"/>
             </section>
 `,
     components: {
@@ -16,7 +15,7 @@ export default {
     },
     data() {
         return {
-            notes: null
+            notes: null,
         };
     },
     created() {
@@ -28,6 +27,9 @@ export default {
             })
     },
     methods: {
+        setNoteTitle({ updatedtxt, noteType }) {
+            console.log('APP', updatedtxt, noteType)
+        },
         removeNote(noteId) {
             console.log('delete APP', noteId)
             noteService.remove(noteId)
