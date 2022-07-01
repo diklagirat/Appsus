@@ -3,7 +3,7 @@
 @import url('./apps//keep/note-list.css');
 @import url('./apps//keep/note-details.css');
 @import url('./apps//keep/note-preview.css');
-
+@import url('./apps//keep/add-note.css');
 /* Email App */
 @import url('./apps/email/email-list.css');
 @import url('./apps/email/email-preview.css');

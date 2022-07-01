@@ -1,8 +1,10 @@
 import noteList from "../cmps/note-list.cmp.js"
+import addNote from "../cmps/add-note.cmp.js"
 import { noteService } from "../services/note.service.js"
 export default {
     template: `
             <section class="keep-app">
+                <add-note></add-note>
                <note-list :notes="notesToShow"
                             @remove="removeNote"
                             @setPin="setPinNote"
@@ -13,6 +15,7 @@ export default {
 `,
     components: {
         noteList,
+        addNote,
     },
     data() {
         return {

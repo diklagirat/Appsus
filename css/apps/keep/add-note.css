@@ -1,0 +1,54 @@
+.add-note{
+    width: 800px;
+    height: 70px;
+    margin: auto;
+    padding: 10px;
+    background-color:rgb(230, 230, 230);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.add-note-container{
+    display: flex;
+    justify-content: space-around;
+    height: 45px;
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+}
+.add-note-container input{
+    width: 60%;
+    padding-left: 15px;
+    border: none;
+    margin-top: 5px;
+    font-size: medium;
+    background-color: inherit;
+}
+.add-note-container .add-btn{
+    width: 35%;
+}
+.add-btn{
+    display: flex;
+    justify-content:space-around;
+    padding-top: 10px;
+}
+.fab, .fas{
+
+    /* height: inherit; */
+    padding-left: 10px;
+    font-size: 1.5em;
+}
+.fa-youtube{
+    padding-left: 13px;
+    width: 54px;
+}
+.fa-font, .fa-image, .fa-youtube, .fa-volume-up, .fa-list-ul{
+ 
+    color: rgb(160, 155, 155);
+}
+.fa-font:hover,
+.fa-image:hover,
+.fa-youtube:hover,
+.fa-volume-up:hover,
+.fa-list-ul:hover{
+    color:rgb(37, 36, 36)
+}
