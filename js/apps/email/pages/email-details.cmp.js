@@ -14,27 +14,35 @@ export default {
 `,
     data() {
         return {
-            email: null
+            email: null,
+            emails: null,
         }
     },
     created() {
-
+        emailService.query()
+            .then(emails => this.emails = emails)
+            .catch(err => console.log('err:', err))
         const { emailId } = this.$route.params
         emailService.get(emailId)
             .then(email => {
                 this.email = email
                 this.updateEmail()
             })
+
     },
     methods: {
         updateEmail() {
-            console.log('this.email:', this.email)
             this.email.isRead = true
             emailService.save(this.email)
         },
-        deleteEmail(emailId){
-            console.log('delete email', emailId);
-            
+        deleteEmail(emailId) {
+            console.log('delete email', emailId)
+            emailService.remove(emailId)
+                .then(() => {
+                    const deletedEmailIdx = this.emails.findIndex(email => email.id === emailId)
+                    console.log('deletedEmailIdx:', deletedEmailIdx)
+                    this.emails.splice(deletedEmailIdx, 1)
+                })
         }
     },
     computed: {
@@ -43,5 +51,5 @@ export default {
             return new Date(+sentAt).toDateString()
         }
     },
-     unmounted() { },
+    unmounted() { },
 }
