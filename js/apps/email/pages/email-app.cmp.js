@@ -1,18 +1,20 @@
 import { emailService } from '../services/email.service.js'
 import emailList from '../cmp/email-list.cmp.js'
 import emailFolderList from '../cmp/email-folder-list.cmp.js'
-
+import addEmail from '../cmp/add-email.cmp.js'
 
 export default {
     template: `
         <section class="email-app">
+            <add-email />
             <email-folder-list :emails="emailsInInbox"/>
             <email-list :emails="emailsToShow"/>
         </section>
 `,
     components: {
         emailList,
-        emailFolderList
+        emailFolderList,
+        addEmail
     },
     data() {
         return {
