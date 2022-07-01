@@ -9,6 +9,9 @@ export default {
         setTitle(ev) {
             const updatedtxt = ev.target.innerText
             this.$emit("setTitle", updatedtxt, 'note-img')
-        }
+        },
+    },
+    computed: {
+
     },
 }

@@ -17,8 +17,19 @@ export default {
                 <div class="edit-btn-container">
                      <i @click="sendEmail" class="fas fa-paper-plane"></i>
                     <i @click="setColor" class="fas fa-palette"></i>
+                        <div class="color-container">
+                            <span class="color-opt" @click="setColor('rgb(255, 255, 255)')" style="background-color: rgb(255, 255, 255);"> &nbsp; </span>
+                            <span class="color-opt" @click="setColor('rgb(255, 204, 136)')" style="background-color: rgb(255, 204, 136);"> &nbsp; </span>
+                            <span class="color-opt" @click="setColor('rgb(204, 255, 153)')" style="background-color: rgb(204, 255, 153);"> &nbsp; </span>
+                            <span class="color-opt" @click="setColor('rgb(255, 136, 136)')" style="background-color: rgb(255, 136, 136);"> &nbsp; </span>
+                            <span class="color-opt" @click="setColor('rgb(170, 255, 238)')" style="background-color: rgb(170, 255, 238);"> &nbsp; </span>
+                            <span class="color-opt" @click="setColor('rgb(255, 255, 136)')" style="background-color: rgb(255, 255, 136);"> &nbsp; </span>
+                            <span class="color-opt" @click="setColor('rgb(162, 171, 155)')" style="background-color: rgb(162, 171, 155);"> &nbsp; </span>
+                            <span class="color-opt" @click="setColor('rgb(136, 187, 255)')" style="background-color: rgb(136, 187, 255);"> &nbsp; </span>
+                            <span class="color-opt" @click="setColor('rgb(166, 199, 239)')" style="background-color: rgb(166, 199, 239);"> &nbsp; </span>
+                            <span class="color-opt" @click="setColor('rgb(240, 229, 183)')" style="background-color: rgb(240, 229, 183);"> &nbsp; </span>
+                        </div>  
                     <i @click="pinNote" class="fas fa-thumbtack"></i>
-                    <i @click="editNote" class="fas fa-edit"></i>
                     <i @click="removeNote" class="fas fa-trash"></i>
                 </div>
         </div>
@@ -48,16 +59,13 @@ export default {
         sendEmail() {
             console.log('send Email..')
         },
-        setColor() {
-            console.log('select color..')
+        setColor(color) {
+            const noteId = this.note.id
+            this.$emit('setColor', { color, noteId });
         },
         pinNote() {
             console.log('pin note..')
             this.$emit('pinNote', this.note.id)
-        },
-        editNote() {
-            console.log('edit note..', this.note)
-            this.$emit('editNote', this.note.id)
         },
         removeNote() {
             this.$emit('remove', this.note.id)
