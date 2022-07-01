@@ -10,6 +10,7 @@ export const emailService = {
     get,
     remove,
     save,
+    getUser
 }
 
 function query() {
@@ -36,4 +37,10 @@ function remove(emailId) {
 function save(email) {
     if (email.id) return storageService.put(EMAILS_KEY, email)
     else return storageService.post(EMAILS_KEY, email)
+}
+
+function getUser(){
+    return { 
+        email: 'user@appsus.com', 
+        fullname: 'Mahatma Appsus' }
 }
