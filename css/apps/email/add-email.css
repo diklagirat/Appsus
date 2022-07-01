@@ -1,0 +1,17 @@
+.new-email-container {
+    width: 50vw;
+    margin: auto;
+    text-align: left;
+}
+
+.new-email-container form {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin: auto;
+}
+
+.new-email-container form >* {
+    padding: 0.5em;
+    margin: 0.5em;
+}

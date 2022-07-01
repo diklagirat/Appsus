@@ -3,19 +3,19 @@ export default {
     template: `
         <section class="email-folder-list">
             <div class="">
-                <p>Inbox: {{emails}}</p>
-
+                <i class="fas fa-inbox"></i>
+                <p>Inbox: ({{emails}})</p>
             </div>
             <div class="">
+                <i class="fas fa-star"></i>
                 <p>Starred</p>
-
             </div>
             <div class="">
-                <i class="fas fa-edit"></i>
+                <i class="fab fa-firstdraft"></i>
                 <p>Drafts</p>
             </div>
             <div class="">
-                <i class="fa-solid fa-inbox-out"></i>
+                <i class="fas fa-share-square"></i>
                 <p>Sent</p>
             </div>
             <div class="">

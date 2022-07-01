@@ -1,6 +1,6 @@
 import emailPreview from "./email-preview.cmp.js"
 
-// todo: implement a mini-preview with a flag on the model (not in here) - later, when i have time
+// TODO: implement a mini-preview with a flag on the model (not in here) - later, when i have time
 
 export default {
     name: 'email-list',

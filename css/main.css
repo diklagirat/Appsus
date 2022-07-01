@@ -5,6 +5,7 @@
 @import url('./apps/email/email-list.css');
 @import url('./apps/email/email-preview.css');
 @import url('./apps/email/email-folder-list.css');
+@import url('./apps/email/add-email.css');
 
 * {
     box-sizing: border-box;
