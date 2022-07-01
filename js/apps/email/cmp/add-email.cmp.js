@@ -13,7 +13,7 @@ export default {
 
                     <textarea name="email-body" id="email-body" cols="100" rows="30" v-model="newEmail.body"></textarea>
 
-                    <button>Send</button>
+                    <button @click="send">Send</button>
 
                 </form>
             </div>
@@ -25,6 +25,7 @@ export default {
                 to: '',
                 subject: '',
                 body: '',
+                emailBox: 'send',
             }
         }
     },
@@ -33,6 +34,9 @@ export default {
     methods: {
         add(){
             this.$emit('added', this.newEmail)
+        },
+        send(){
+            this.$emit('sended')
         }
     },
     computed: {},

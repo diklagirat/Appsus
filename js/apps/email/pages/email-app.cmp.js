@@ -12,7 +12,7 @@ export default {
         <section class="email-app">
             <button @click="composeEmail" ><i class="fas fa-plus"></i> Compose</button>
             <email-filter @filtered="setFilter"/>
-            <add-email v-if="isComposedEmail" @added="addEmail"/>
+            <add-email v-if="isComposedEmail" @added="addEmail" @sended="sendEmail"/>
             <email-folder-list :emails="emailsInInbox"/>
             <email-list :emails="emailsToShow"/>
         </section>
@@ -27,7 +27,7 @@ export default {
         return {
             isComposedEmail: false,
             emails: null,
-            userEmail: 'user@appsus.com',
+            userEmail: null,
             nextId: 105,
             newEmail: null,
             filterBy: null,
@@ -39,15 +39,18 @@ export default {
             .then(emails => this.emails = emails)
             .catch(err => console.log('err:', err))
         //Get user email from server
-
+        this.getUserEmail()
+        
     },
     methods: {
+        getUserEmail() {
+            const user = emailService.getUser()
+            this.userEmail = user.email
+        },
         composeEmail() {
-            this.isComposedEmail = !this.isComposedEmail
-            console.log('Compose email')
+            this.isComposedEmail = true
         },
         addEmail(email) {
-            console.log('email:', email)
             this.newEmail = {
                 subject: email.subject,
                 body: email.body,
@@ -55,11 +58,12 @@ export default {
                 sentAt: new Date().toDateString(),
                 to: email.to
             }
-
-            console.log('adding email', this.newEmail)
             this.emails.unshift(this.newEmail)
-            console.log('this.emails:', this.emails)
             emailService.save(this.newEmail)
+            console.log('newEmail:',newEmail)
+        },
+        sendEmail(){
+            this.isComposedEmail = false
         },
         setFilter(filterBy) {
             this.filterBy = filterBy
