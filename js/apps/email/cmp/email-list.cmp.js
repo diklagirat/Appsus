@@ -9,9 +9,9 @@ export default {
         <section class="emails-list table">
             <ul>
                 <li v-for="(email, idx) in emails" :key="email.id" class="email-preview-card clean-list row" :class="{unread: !email.isRead}">
-                        <router-link :to="'/email/'+email.id" class="clean-link">
-                            <email-preview :email="email" />
-                        </router-link>
+                        <!-- <router-link :to="'/email/'+email.id" class="clean-link"> -->
+                            <email-preview :email="email" @setStar="$emit('setStar', $event)"/>
+                        <!-- </router-link> -->
 
                     </li>
                 </ul>
@@ -39,7 +39,12 @@ export default {
                 this.isOpen = false
             }
         },
-
+        // setStar(emailId){
+        //     console.log('click star in list');
+        //     console.log('emailId:',emailId)
+        //     this.$emit('starred', emailId)
+        // }
+        
     },
     computed: {
        

@@ -11,10 +11,14 @@ export default {
     template: `
         <section class="email-app flex">
             <email-folder-list :emails="emailsInInbox" @filtered="setFilter"/>
-            <button @click="composeEmail" class="compose"> <img src="img/compose.png" alt="">Compose</button>
+            <button @click="composeEmail" class="compose">
+                 <img src="img/compose.png" alt="">
+                 <br>
+                 Compose
+            </button>
             <email-filter @filtered="setFilter"/>
             <add-email v-if="isComposedEmail" @added="addEmail"/>
-            <email-list :emails="emailsToShow"/>
+            <email-list :emails="emailsToShow" @setStar="starEmail"/>
         </section>
 `,
     components: {
@@ -60,6 +64,7 @@ export default {
                 sentAt:new Date().toDateString(),
                 to: email.to,
                 emailBox,
+                isStarred: false,
             }
             this.emails.push(this.newEmail)
             emailService.save(this.newEmail)
@@ -68,6 +73,10 @@ export default {
         setFilter(filterBy) {
             this.filterBy = filterBy
             console.log('this.filterBy:', this.filterBy)
+
+        },
+        starEmail(emailId){
+            console.log('star email', emailId)
 
         }
     },
@@ -86,7 +95,7 @@ export default {
                 console.log('emails:', emails)
             }
             // console.log('emails, emails[0].sentAt:', emails, emails[0].sentAt)
-            emails.sort((email1, email2) => +email2.sentAt - +email1.sentAt)
+            // emails.sort((email1, email2) => +email2.sentAt - +email1.sentAt)
             return emails
         },
         emailsInInbox() {

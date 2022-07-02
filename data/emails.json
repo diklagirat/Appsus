@@ -6,7 +6,8 @@
         "isRead": false,
         "sentAt": 1551133930594,
         "to": "mylove@husband.com",
-        "emailBox" : "inbox"
+        "emailBox" : "inbox",
+        "isStarred": false
     },
     {
         "id": "e102",
@@ -15,7 +16,8 @@
         "isRead": false,
         "sentAt": 1651133930594,
         "to": "dikla@codingacademy.com",
-        "emailBox" : "sent"
+        "emailBox" : "sent",
+        "isStarred": false
     },
     {
         "id": "e103",
@@ -24,7 +26,8 @@
         "isRead": false,
         "sentAt": 1661133930594,
         "to": "tal@codingacademy.com",
-        "emailBox" : "inbox"
+        "emailBox" : "inbox",
+        "isStarred": false
     },
     {
         "id": "e104",
@@ -33,6 +36,7 @@
         "isRead": false,
         "sentAt": 1551133930594,
         "to": "matan@codingacademy.com",
-        "emailBox" : "inbox"
+        "emailBox" : "inbox",
+        "isStarred": false
     }
 ]
