@@ -10,6 +10,8 @@
 @import url('./apps/email/email-folder-list.css');
 @import url('./apps/email/add-email.css');
 @import url('./apps/email/email-details.css');
+@import url('./apps/email/email.app.css');
+@import url('./apps/email/email-filter.css');
 
 * {
     box-sizing: border-box;

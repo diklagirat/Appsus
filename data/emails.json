@@ -4,7 +4,7 @@
         "subject": "Miss you!",
         "body": "Would love to catch up sometimes",
         "isRead": false,
-        "sentAt": "1551133930594",
+        "sentAt": 1551133930594,
         "to": "mylove@husband.com",
         "emailBox" : "inbox"
     },
@@ -13,7 +13,7 @@
         "subject": "Where are you?",
         "body": "Would love to catch up sometimes",
         "isRead": false,
-        "sentAt": "1651133930594",
+        "sentAt": 1651133930594,
         "to": "dikla@codingacademy.com",
         "emailBox" : "sent"
     },
@@ -22,7 +22,7 @@
         "subject": "The best sprint in the Course!",
         "body": "Would love to catch up sometimes",
         "isRead": false,
-        "sentAt": "1661133930594",
+        "sentAt": 1661133930594,
         "to": "tal@codingacademy.com",
         "emailBox" : "inbox"
     },
@@ -31,7 +31,7 @@
         "subject": "Your application",
         "body": "Would love to catch up sometimes",
         "isRead": false,
-        "sentAt": "1551133930594",
+        "sentAt": 1551133930594,
         "to": "matan@codingacademy.com",
         "emailBox" : "inbox"
     }

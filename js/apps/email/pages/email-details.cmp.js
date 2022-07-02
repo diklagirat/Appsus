@@ -16,6 +16,7 @@ export default {
         return {
             email: null,
             emails: null,
+            isShow: false
         }
     },
     created() {

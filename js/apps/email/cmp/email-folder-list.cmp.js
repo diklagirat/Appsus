@@ -2,7 +2,7 @@ export default {
     props:["emails"],
     template: `
         <section class="email-folder-list">
-            <div class="">
+            <div class="" @click="$emit('filtered', 'inbox')">
                 <i class="fas fa-inbox"></i>
                 <p>Inbox: ({{emails}})</p>
             </div>

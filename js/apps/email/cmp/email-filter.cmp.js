@@ -21,18 +21,18 @@ export default {
     methods: {
         setFilter() {
             // console.log('setting filter:', this.filterBy)
-            console.log('...this.filterBy:',{...this.filterBy})
-            this.$emit('filtered', ...this.filterBy)
+            console.log('...this.filterBy:',this.filterBy)
+            this.$emit('filtered', this.filterBy)
         }
     },
     computed: {},
     unmounted() { },
-    watch: {
-        filterBy: {
-            handler(newVal) {
-                console.log('Filter changed', newVal)
-            },
-            deep: true
-        }
-    }
+    // watch: {
+    //     filterBy: {
+    //         handler(newVal) {
+    //             console.log('Filter changed', newVal)
+    //         },
+    //         deep: true
+    //     }
+    // }
 }

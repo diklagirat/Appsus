@@ -9,11 +9,11 @@ import emailFilter from '../cmp/email-filter.cmp.js'
 
 export default {
     template: `
-        <section class="email-app">
-            <button @click="composeEmail" ><i class="fas fa-plus"></i> Compose</button>
+        <section class="email-app flex">
+            <email-folder-list :emails="emailsInInbox" @filtered="setFilter"/>
+            <button @click="composeEmail" class="compose"> <img src="img/compose.png" alt="">Compose</button>
             <email-filter @filtered="setFilter"/>
             <add-email v-if="isComposedEmail" @added="addEmail"/>
-            <email-folder-list :emails="emailsInInbox" @filtered="setFilter"/>
             <email-list :emails="emailsToShow"/>
         </section>
 `,
@@ -40,7 +40,7 @@ export default {
             .catch(err => console.log('err:', err))
         //Get user email from server
         this.getUserEmail()
-        
+
     },
     methods: {
         getUserEmail() {
@@ -51,24 +51,24 @@ export default {
             this.isComposedEmail = true
         },
         addEmail(email) {
-            console.log('email.to:',email.to)
             var emailBox = 'inbox'
             if (email.to === this.userEmail) emailBox = 'sent'
             this.newEmail = {
                 subject: email.subject,
                 body: email.body,
                 isRead: false,
-                sentAt: new Date().toDateString(),
+                sentAt:new Date().toDateString(),
                 to: email.to,
                 emailBox,
             }
-            this.emails.unshift(this.newEmail)
+            this.emails.push(this.newEmail)
             emailService.save(this.newEmail)
             this.isComposedEmail = false
         },
         setFilter(filterBy) {
             this.filterBy = filterBy
-            console.log('this.filterBy:',this.filterBy)
+            console.log('this.filterBy:', this.filterBy)
+
         }
     },
     computed: {
@@ -81,6 +81,12 @@ export default {
                     emails = emails.filter(email => email.isRead === false)
                 }
             }
+            if (this.filterBy?.emailBox) {
+                emails = emails.filter(email => email.emailBox === this.filterBy)
+                console.log('emails:', emails)
+            }
+            // console.log('emails, emails[0].sentAt:', emails, emails[0].sentAt)
+            emails.sort((email1, email2) => +email2.sentAt - +email1.sentAt)
             return emails
         },
         emailsInInbox() {
