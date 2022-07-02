@@ -24,7 +24,7 @@
         "subject": "The best sprint in the Course!",
         "body": "Would love to catch up sometimes",
         "isRead": false,
-        "sentAt": 1661133930594,
+        "sentAt": 1656745834299,
         "to": "tal@codingacademy.com",
         "emailBox" : "inbox",
         "isStarred": false
@@ -34,8 +34,38 @@
         "subject": "Your application",
         "body": "Would love to catch up sometimes",
         "isRead": false,
-        "sentAt": 1551133930594,
+        "sentAt": 1552133930594,
         "to": "matan@codingacademy.com",
+        "emailBox" : "inbox",
+        "isStarred": false
+    },
+    {
+        "id": "e105",
+        "subject": "Vacation",
+        "body": "Would love to catch up sometimes",
+        "isRead": false,
+        "sentAt": 1551123930594,
+        "to": "mylove@husband.com",
+        "emailBox" : "inbox",
+        "isStarred": false
+    },
+    {
+        "id": "e106",
+        "subject": "I want to see you!",
+        "body": "Would love to catch up sometimes",
+        "isRead": false,
+        "sentAt": 1656805034299,
+        "to": "mychildern@rotem.family.com",
+        "emailBox" : "inbox",
+        "isStarred": false
+    },
+    {
+        "id": "e106",
+        "subject": "Good Luck!",
+        "body": "Would love to catch up sometimes",
+        "isRead": false,
+        "sentAt": 1541133930594,
+        "to": "mychildern@rotem.family.com",
         "emailBox" : "inbox",
         "isStarred": false
     }
