@@ -10,6 +10,9 @@ export const noteService = {
     get,
     remove,
     save,
+    getEmptyTextNote,
+    getEmptyTodoNote,
+    getEmptyImageNote
 }
 
 function query() {
@@ -37,4 +40,52 @@ function remove(noteId) {
 function save(note) {
     if (note.id) return storageService.put(NOTES_KEY, note)
     else return storageService.post(NOTES_KEY, note)
+}
+///
+function getEmptyTextNote() {
+    console.log('in')
+    return {
+        id: utilService.makeId(),
+        type: 'note-txt',
+        isPinned: false,
+        info: {
+            txt: ''
+        },
+        style: {
+            backgroundColor: 'none'
+        }
+    }
+}
+function getEmptyTodoNote() {
+    return {
+        id: utilService.makeId(),
+        type: "note-todos",
+        isPinned: false,
+        info: {
+            label: '',
+            todos: [
+                {
+                    txt: '',
+                    donAt: null
+                }
+            ]
+        },
+        style: {
+            backgroundColor: 'none'
+        }
+    }
+}
+function getEmptyImageNote() {
+    return {
+        id: utilService.makeId(),
+        type: 'note-img',
+        isPinned: true,
+        info: {
+            url: 'img/trees.jpeg',
+            title: ''
+        },
+        style: {
+            backgroundColor: 'none'
+        }
+    }
 }
