@@ -5,7 +5,8 @@
         "body": "Would love to catch up sometimes",
         "isRead": false,
         "sentAt": "1551133930594",
-        "to": "mylove@husband.com"
+        "to": "mylove@husband.com",
+        "emailBox" : "inbox"
     },
     {
         "id": "e102",
@@ -13,7 +14,8 @@
         "body": "Would love to catch up sometimes",
         "isRead": false,
         "sentAt": "1651133930594",
-        "to": "dikla@codingacademy.com"
+        "to": "dikla@codingacademy.com",
+        "emailBox" : "sent"
     },
     {
         "id": "e103",
@@ -21,7 +23,8 @@
         "body": "Would love to catch up sometimes",
         "isRead": false,
         "sentAt": "1661133930594",
-        "to": "tal@codingacademy.com"
+        "to": "tal@codingacademy.com",
+        "emailBox" : "inbox"
     },
     {
         "id": "e104",
@@ -29,6 +32,7 @@
         "body": "Would love to catch up sometimes",
         "isRead": false,
         "sentAt": "1551133930594",
-        "to": "matan@codingacademy.com"
+        "to": "matan@codingacademy.com",
+        "emailBox" : "inbox"
     }
 ]

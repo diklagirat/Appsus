@@ -14,7 +14,7 @@ export default {
                 <i class="fab fa-firstdraft"></i>
                 <p>Drafts</p>
             </div>
-            <div class="">
+            <div class="sent-emails" @click="setFilter">
                 <i class="fas fa-share-square"></i>
                 <p>Sent</p>
             </div>
@@ -32,7 +32,11 @@ export default {
     created() {
 
      },
-    methods: {},
+    methods: {
+        setFilter(){
+            this.$emit('filtered','sent')
+        }
+    },
     computed: {},
     unmounted() { },
 }
