@@ -29,8 +29,9 @@ export default {
                             <span class="color-opt" @click="setColor('rgb(166, 199, 239)')" style="background-color: rgb(166, 199, 239);"> &nbsp; </span>
                             <span class="color-opt" @click="setColor('rgb(240, 229, 183)')" style="background-color: rgb(240, 229, 183);"> &nbsp; </span>
                         </div>  
-                    <i @click="pinNote" class="fas fa-thumbtack"></i>
-                    <i @click="removeNote" class="fas fa-trash"></i>
+                    <i class="fas fa-thumbtack" @click="pinNote" ></i>
+                    <i class="fas fa-copy" @click="duplicateNote"></i>
+                    <i class="fas fa-trash" @click="removeNote" ></i>
                 </div>
         </div>
     </section>
@@ -48,6 +49,10 @@ export default {
         noteTodos,
     },
     methods: {
+        duplicateNote() {
+            const note = this.note
+            this.$emit('duplicateNote', note)
+        },
         setNoteTodoTxt(updatedTodotxt, todoIdx) {
             const noteId = this.note.id
             this.$emit('setNoteTodoTxt', { updatedTodotxt, todoIdx, noteId })

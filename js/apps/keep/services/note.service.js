@@ -12,7 +12,7 @@ export const noteService = {
     save,
     getEmptyTextNote,
     getEmptyTodoNote,
-    getEmptyImageNote
+    getEmptyImageNote,
 }
 
 function query() {
@@ -22,6 +22,7 @@ function query() {
 function _createNotes() {
     let notes = utilService.loadFromStorage(NOTES_KEY);
     if (!notes || !notes.length) {
+        console.log('clear')
         notes = notesJson;
         utilService.saveToStorage(NOTES_KEY, notes);
     }
@@ -41,9 +42,8 @@ function save(note) {
     if (note.id) return storageService.put(NOTES_KEY, note)
     else return storageService.post(NOTES_KEY, note)
 }
-///
+
 function getEmptyTextNote() {
-    console.log('in')
     return {
         id: utilService.makeId(),
         type: 'note-txt',
@@ -63,12 +63,7 @@ function getEmptyTodoNote() {
         isPinned: false,
         info: {
             label: '',
-            todos: [
-                {
-                    txt: '',
-                    donAt: null
-                }
-            ]
+            todos: []
         },
         style: {
             backgroundColor: 'none'

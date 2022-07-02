@@ -6,7 +6,7 @@ export default {
     template: `
         <section class="notes-list flex wrap">
             <div class="notes-list-container">
-                    <ul class="notes-container ">
+                    <ul class="notes-container">
                         <li v-for="(note,idx) in notes" :key="note.id" class="notes-preview-card" :style="note.style" >
                             <note-preview :note="note" @click.stop="select(note)" />
                         </li>
@@ -16,7 +16,8 @@ export default {
                             @pinNote="$emit('setPin', $event)"
                             @updateNoteTxt="$emit('setNoteTitle', $event)"
                             @setNoteTodoTxt="$emit('setNoteTodo',$event)"
-                            @setColor="$emit('setNoteColor', $event)"></note-details>
+                            @setColor="$emit('setNoteColor', $event)"
+                            @duplicateNote="$emit('duplicateNote', $event)"></note-details>
             </div>
             </section>
 `,

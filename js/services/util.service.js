@@ -1,9 +1,12 @@
 export const utilService = {
     saveToStorage,
     loadFromStorage,
+    clearStorage,
     makeId
 };
-
+function clearStorage() {
+    localStorage.clear()
+}
 function saveToStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value) || null);
 }

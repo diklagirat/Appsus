@@ -6,7 +6,6 @@ export default {
             <ul>
                 <li v-for=" (todo, idx) in  info.todos" :key="idx">
                     <p contenteditable="true" @blur="setNoteTodoTxt($event, idx)">{{todo.txt}}</p>
-                    <p contenteditable="true">{{todo.doneAt}}</p>
                 </li>
             </ul>
             
