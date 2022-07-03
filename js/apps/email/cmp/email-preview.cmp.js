@@ -5,7 +5,7 @@ export default {
     props: ['email'],
     template: `
     <section class="email-preview-container">
-        <article class="cell star" @click="setStar">
+        <article class="cell star" @click.stop="setStar">
         <router-link :to="/email/">
                 <p><i class="far fa-star"></i></p>
             </router-link>
@@ -46,7 +46,6 @@ export default {
             const { sentAt } = this.email
             return new Date(sentAt).toDateString()
         },
-
     },
     unmounted() { },
     emits: ["setStar"]

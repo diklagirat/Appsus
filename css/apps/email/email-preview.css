@@ -6,20 +6,20 @@ display: flex;
     display: table-row-group;
     width: 100%;
 }
-
+.cell.star{
+    font-size: 1em;
+}
 
 .cell {
     display: table-cell;
-    /* border-bottom: 1px solid gray; */
-    /* /* max-width: 30% */
-    width: 10vw;
+    /* border-bottom: 1px solid rgb(103, 2, 83); */
+    padding: 0px;
 }
 
 .cell > p {
     margin: 0;
     padding: 0.5em;
     padding-inline: 1.5em;
-    /* white-space: nowrap; */
     overflow: hidden;
     text-overflow: ellipsis;
 }

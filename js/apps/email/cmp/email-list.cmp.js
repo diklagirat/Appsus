@@ -6,13 +6,12 @@ export default {
     name: 'email-list',
     props: ['emails'],
     template: `
-        <section class="emails-list table">
-            <ul>
+        <section>
+            <ul class="emails-list flex column">
                 <li v-for="(email, idx) in emails" :key="email.id" class="email-preview-card clean-list row" :class="{unread: !email.isRead}">
                         <!-- <router-link :to="'/email/'+email.id" class="clean-link"> -->
                             <email-preview :email="email" @setStar="$emit('setStar', $event)"/>
                         <!-- </router-link> -->
-
                     </li>
                 </ul>
         </section>
@@ -44,10 +43,10 @@ export default {
         //     console.log('emailId:',emailId)
         //     this.$emit('starred', emailId)
         // }
-        
+
     },
     computed: {
-       
+
     },
     unmounted() { },
 }

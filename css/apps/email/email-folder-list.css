@@ -16,8 +16,12 @@
 .starred-emails,
 .drafts,
 .sent-emails,
-.deleted-emails  {
+.deleted-emails{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+.email-folder-list p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-left: 1em;
 }

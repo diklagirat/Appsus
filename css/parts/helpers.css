@@ -14,3 +14,28 @@
 .flex {
     display: flex;
 }
+
+.space-between {
+    justify-content: space-between;
+}
+
+.align-items {
+    align-items: center;
+}
+
+.center {
+    justify-content: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.center-self {
+    align-self: center;
+    justify-self: center;
+}
+
+.align-self-start {
+    align-self: flex-start;
+}

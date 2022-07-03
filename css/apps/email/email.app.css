@@ -1,10 +1,36 @@
-article {
+/* article {
     display: block;
     text-align: center;
-}
+} */
 
+.email-app {
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
 .compose {
-    height: 5em;
+    height: 3em;
     margin: 0.5em;
     background-color: transparent;
+    border-radius: 20px;
+    width:12em;
+    justify-content: center;
+    border-width: 0.1em;
+} 
+
+.mail-masseges {
+    flex-basis: 80%;
+    height: 80vh;
+    overflow: auto;
+    position: relative;
+}
+.email-main-container{
+    height: 80vh;
+    padding: 15px;
+    gap: 15px;
+}
+.options-container {
+    flex-basis: 20%;
+    padding: 20px 0;
+    position: relative;
 }

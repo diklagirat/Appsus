@@ -60,11 +60,21 @@
         "isStarred": false
     },
     {
-        "id": "e106",
+        "id": "e107",
         "subject": "Good Luck!",
         "body": "Would love to catch up sometimes",
         "isRead": false,
         "sentAt": 1541133930594,
+        "to": "mychildern@rotem.family.com",
+        "emailBox" : "inbox",
+        "isStarred": false
+    },
+     {
+        "id": "e108",
+        "subject": "Have Fun !",
+        "body": "Would love to catch up sometimes",
+        "isRead": false,
+        "sentAt": 1543333930594,
         "to": "mychildern@rotem.family.com",
         "emailBox" : "inbox",
         "isStarred": false

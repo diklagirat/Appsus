@@ -1,3 +1,10 @@
 .email-filter {
     margin: 0.5em;
 }
+.email-filter .filter-search{
+    height: 3em;
+    border-radius: 20px;
+    width: 12em;
+    border-width: 0.1em;
+    padding-left: 2em;
+}

@@ -10,17 +10,24 @@ import emailFilter from '../cmp/email-filter.cmp.js'
 export default {
     template: `
         <section class="email-app flex">
-            <article>
-                <button @click="composeEmail" class="compose">
-                    <img src="img/compose.png" alt="">
-                    <br>
-                    Compose
-                </button>
-                <email-filter @filtered="setFilter"/>
-                <email-folder-list :emails="emailsInInbox" @filtered="setFilter"/>
+            <article class="email-main-container">
+                <div class ="email-options">
+                    <div class="options-container">
+                        <button @click="composeEmail" class="compose flex align-items" >
+                                <h1>Compose</h1>
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <email-filter @filtered="setFilter"/>
+                            <email-folder-list :emails="emailsInInbox" @filtered="setFilter"/>
+                    </div>
+                 </div>
             </article>
-            <add-email v-if="isComposedEmail" @added="addEmail"/>
-            <email-list :emails="emailsToShow" @setStar="starEmail"/>
+             <div class="mail-masseges">
+                <email-list :emails="emailsToShow" @setStar="starEmail"/>
+
+             </div>
+                <add-email v-if="isComposedEmail" @added="addEmail"/>
+
         </section>
 `,
     components: {

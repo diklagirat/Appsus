@@ -2,10 +2,6 @@
     /* text-align: center; */
 }
 
-.emails-list >* p {
-    /* text-align: left; */
-}
-
 .table {
     display: table;
     width: 80vw;
@@ -13,13 +9,11 @@
 
 .email-preview-card {
     list-style-type: none;
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-between; */
+    border-bottom: 1px solid rgb(103, 2, 83);
 }
 
 .row {
-    border-bottom: 1px solid gray;
+    /* border-bottom: 1px solid gray; */
 }
 
 .unread {
