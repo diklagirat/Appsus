@@ -1,9 +1,11 @@
 import noteList from "../cmps/note-list.cmp.js"
 import addNote from "../cmps/add-note.cmp.js"
+import noteFilter from "../cmps/note-filter.cmp.js"
 import { noteService } from "../services/note.service.js"
 export default {
     template: `
             <section class="keep-app">
+            <note-filter @setFilter="setFilter" />
                <note-list :notes="notesToShow"
                             @remove="removeNote"
                             @setPin="setPinNote"
@@ -16,10 +18,14 @@ export default {
     components: {
         noteList,
         addNote,
+        noteFilter,
+
     },
     data() {
         return {
             notes: null,
+            txt: '',
+            filters: null
         };
     },
     created() {
@@ -31,6 +37,10 @@ export default {
             })
     },
     methods: {
+        setFilter(searchTxt, filterBy) {
+            this.filters = Object.assign({}, filterBy);
+            this.txt = searchTxt
+        },
         duplicateNote(noteToCopy) {
             let newNote
             if (noteToCopy.type === 'note-txt') {
@@ -134,7 +144,28 @@ export default {
     },
     computed: {
         notesToShow() {
-            return this.notes
+            var notes = this.notes
+            if (this.filters?.type) {
+                const regex = new RegExp(this.filters.type, 'i')
+                notes = notes.filter(note => regex.test(note.type))
+                console.log('filter', notes)
+            }
+            if (this.txt) {
+                console.log('fhhjhj')
+                notes = notes.filter(note => {
+                    if (note.type === 'note-txt') {
+                        const regexText = new RegExp(this.txt, 'i')
+                        return notes.filter(note => regexText.test(note.txt))
+                    }
+                    if (note.type === 'note-todos') {
+                        const regexTodo = new RegExp(this.txt, 'i')
+                        return note.info.todos.some(todo => {
+                            return regexTodo.test(todo.txt)
+                        })
+                    }
+                })
+            }
+            return notes
         },
     },
 }

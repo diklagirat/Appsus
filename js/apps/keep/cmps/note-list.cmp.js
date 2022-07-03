@@ -28,7 +28,7 @@ export default {
 
     data() {
         return {
-            isShowList: false,
+            // isShowList: false,
             selectedNote: null,
         };
     },
