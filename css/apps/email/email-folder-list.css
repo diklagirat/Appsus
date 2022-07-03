@@ -7,3 +7,17 @@
 .email-folder-list:hover{
     cursor: pointer;
 }
+
+.email-folder-list >* i {
+    padding: 0.5em;
+}
+
+.inbox, 
+.starred-emails,
+.drafts,
+.sent-emails,
+.deleted-emails  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

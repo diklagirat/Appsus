@@ -2,15 +2,15 @@ export default {
     props:["emails"],
     template: `
         <section class="email-folder-list">
-            <div class="" @click="$emit('filtered', 'inbox')">
+            <div class="inbox" @click="$emit('filtered', 'inbox')">
                 <i class="fas fa-inbox"></i>
                 <p>Inbox: ({{emails}})</p>
             </div>
-            <div class="">
+            <div class="starred-emails">
                 <i class="fas fa-star"></i>
                 <p>Starred</p>
             </div>
-            <div class="">
+            <div class="drafts">
                 <i class="fab fa-firstdraft"></i>
                 <p>Drafts</p>
             </div>
@@ -18,7 +18,7 @@ export default {
                 <i class="fas fa-share-square"></i>
                 <p>Sent</p>
             </div>
-            <div class="">
+            <div class="deleted-emails">
                 <i class="fas fa-trash"></i>
                 <p>Deleted</p>
             </div>

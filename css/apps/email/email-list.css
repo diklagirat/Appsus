@@ -1,16 +1,21 @@
 .emails-list {
-    text-align: center;
+    /* text-align: center; */
+}
+
+.emails-list >* p {
+    /* text-align: left; */
 }
 
 .table {
     display: table;
+    width: 80vw;
 }
 
 .email-preview-card {
     list-style-type: none;
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between; */
 }
 
 .row {

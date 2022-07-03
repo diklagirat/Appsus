@@ -10,13 +10,15 @@ import emailFilter from '../cmp/email-filter.cmp.js'
 export default {
     template: `
         <section class="email-app flex">
-            <email-folder-list :emails="emailsInInbox" @filtered="setFilter"/>
-            <button @click="composeEmail" class="compose">
-                 <img src="img/compose.png" alt="">
-                 <br>
-                 Compose
-            </button>
-            <email-filter @filtered="setFilter"/>
+            <article>
+                <button @click="composeEmail" class="compose">
+                    <img src="img/compose.png" alt="">
+                    <br>
+                    Compose
+                </button>
+                <email-filter @filtered="setFilter"/>
+                <email-folder-list :emails="emailsInInbox" @filtered="setFilter"/>
+            </article>
             <add-email v-if="isComposedEmail" @added="addEmail"/>
             <email-list :emails="emailsToShow" @setStar="starEmail"/>
         </section>
@@ -57,11 +59,13 @@ export default {
         addEmail(email) {
             var emailBox = 'inbox'
             if (email.to === this.userEmail) emailBox = 'sent'
+            var date = new Date()
+            console.log('date:', date.toDateString())
             this.newEmail = {
                 subject: email.subject,
                 body: email.body,
                 isRead: false,
-                sentAt:new Date().toDateString(),
+                sentAt: +date.toDateString(),
                 to: email.to,
                 emailBox,
                 isStarred: false,
@@ -75,7 +79,7 @@ export default {
             console.log('this.filterBy:', this.filterBy)
 
         },
-        starEmail(emailId){
+        starEmail(emailId) {
             console.log('star email', emailId)
 
         }
@@ -95,7 +99,7 @@ export default {
                 console.log('emails:', emails)
             }
             // console.log('emails, emails[0].sentAt:', emails, emails[0].sentAt)
-            // emails.sort((email1, email2) => +email2.sentAt - +email1.sentAt)
+            emails.sort((email1, email2) => +email2.sentAt - +email1.sentAt)
             return emails
         },
         emailsInInbox() {

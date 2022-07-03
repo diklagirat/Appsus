@@ -1,27 +1,40 @@
+.email-preview-container {
+display: flex;
+}
+
 .email-preview {
     display: table-row-group;
     width: 100%;
 }
 
+
 .cell {
     display: table-cell;
     /* border-bottom: 1px solid gray; */
-    max-width: 30%;
+    /* /* max-width: 30% */
+    width: 10vw;
 }
 
 .cell > p {
     margin: 0;
     padding: 0.5em;
     padding-inline: 1.5em;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.sender {}
-
-.subject {
-    width: 70%;
+.sender {
+    width: 30vw;
+    text-align: left;
 }
 
-.date {}
+.subject {
+    width: 30vw;
+    text-align: left;
+}
+
+.date {
+    width: 30vw;
+    text-align: right;
+}
