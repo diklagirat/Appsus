@@ -7,28 +7,24 @@ export default {
     <section class="note-details">
         <div class="note-detail-card" v-if="note">
                 <div>
-                    <button class="close-btn" >X</button>
+                        <button class="close-btn" @click="$emit('closeDetaile')">X</button>
                 </div>
                 <div>
-                        <component :is="note.type" :info="note.info"  :id="note.id" 
+                        <component :is="note.type" :info="note.info"  :id="note.id"
                                                     @setTitle="setTitle"
                                                     @setTodoTxt="setNoteTodoTxt"></component> 
                 </div>
                 <div class="edit-btn-container">
-                     <i @click="sendEmail" class="fas fa-paper-plane"></i>
-                    <i @click="setColor" class="fas fa-palette"></i>
-                        <div class="color-container">
-                            <span class="color-opt" @click="setColor('rgb(255, 255, 255)')" style="background-color: rgb(255, 255, 255);"> &nbsp; </span>
-                            <span class="color-opt" @click="setColor('rgb(255, 204, 136)')" style="background-color: rgb(255, 204, 136);"> &nbsp; </span>
-                            <span class="color-opt" @click="setColor('rgb(204, 255, 153)')" style="background-color: rgb(204, 255, 153);"> &nbsp; </span>
-                            <span class="color-opt" @click="setColor('rgb(255, 136, 136)')" style="background-color: rgb(255, 136, 136);"> &nbsp; </span>
-                            <span class="color-opt" @click="setColor('rgb(170, 255, 238)')" style="background-color: rgb(170, 255, 238);"> &nbsp; </span>
-                            <span class="color-opt" @click="setColor('rgb(255, 255, 136)')" style="background-color: rgb(255, 255, 136);"> &nbsp; </span>
-                            <span class="color-opt" @click="setColor('rgb(162, 171, 155)')" style="background-color: rgb(162, 171, 155);"> &nbsp; </span>
-                            <span class="color-opt" @click="setColor('rgb(136, 187, 255)')" style="background-color: rgb(136, 187, 255);"> &nbsp; </span>
-                            <span class="color-opt" @click="setColor('rgb(166, 199, 239)')" style="background-color: rgb(166, 199, 239);"> &nbsp; </span>
-                            <span class="color-opt" @click="setColor('rgb(240, 229, 183)')" style="background-color: rgb(240, 229, 183);"> &nbsp; </span>
-                        </div>  
+                        <i @click="sendEmail" class="fas fa-paper-plane"></i>
+                        <i @click="setColor" class="fas fa-palette">
+                                 <div class="color-container" v-if="isClicked">
+                                    <span class="color-opt" @click="setColor('rgb(170, 255, 238)')" style="background-color: rgb(170, 255, 238);"> &nbsp; </span>
+                                    <span class="color-opt" @click="setColor('rgb(162, 171, 155)')" style="background-color: rgb(162, 171, 155);"> &nbsp; </span>
+                                    <span class="color-opt" @click="setColor('rgb(136, 187, 255)')" style="background-color: rgb(136, 187, 255);"> &nbsp; </span>
+                                    <span class="color-opt" @click="setColor('rgb(166, 199, 239)')" style="background-color: rgb(166, 199, 239);"> &nbsp; </span>
+                                    <span class="color-opt" @click="setColor('rgb(240, 229, 183)')" style="background-color: rgb(240, 229, 183);"> &nbsp; </span>
+                            </div> 
+                        </i>
                     <i class="fas fa-thumbtack" @click="pinNote" ></i>
                     <i class="fas fa-copy" @click="duplicateNote"></i>
                     <i class="fas fa-trash" @click="removeNote" ></i>
@@ -41,6 +37,7 @@ export default {
     data() {
         return {
             isShowEditBtn: true,
+            isClicked: false
         };
     },
     components: {
@@ -65,6 +62,7 @@ export default {
             console.log('send Email..')
         },
         setColor(color) {
+            this.isClicked = !this.isClicked
             const noteId = this.note.id
             this.$emit('setColor', { color, noteId });
         },

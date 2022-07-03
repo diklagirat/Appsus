@@ -1,6 +1,8 @@
 import notePreview from './note-preview.cmp.js'
 import noteDetails from '../pages/note-details.cmp.js';
 import { noteService } from "../../keep/services/note.service.js"
+// @remove="$emit('remove',$event)"
+
 export default {
     props: ['notes'],
     template: `
@@ -12,12 +14,13 @@ export default {
                         </li>
                     </ul>
                     <note-details v-if="selectedNote" :note="selectedNote" 
-                            @remove="$emit('remove',$event)"
+                            @remove="remove"
                             @pinNote="$emit('setPin', $event)"
                             @updateNoteTxt="$emit('setNoteTitle', $event)"
                             @setNoteTodoTxt="$emit('setNoteTodo',$event)"
                             @setColor="$emit('setNoteColor', $event)"
-                            @duplicateNote="$emit('duplicateNote', $event)"></note-details>
+                            @duplicateNote="$emit('duplicateNote', $event)"
+                            @closeDetaile="selectedNote=null"></note-details>
             </div>
             </section>
 `,
@@ -28,7 +31,6 @@ export default {
 
     data() {
         return {
-            // isShowList: false,
             selectedNote: null,
         };
     },
@@ -36,5 +38,9 @@ export default {
         select(note) {
             this.selectedNote = note
         },
+        remove(event) {
+            this.selectedNote = null
+            this.$emit('remove', event)
+        }
     },
 }

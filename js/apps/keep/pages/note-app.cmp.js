@@ -1,25 +1,25 @@
-import noteList from "../cmps/note-list.cmp.js"
-import addNote from "../cmps/add-note.cmp.js"
-import noteFilter from "../cmps/note-filter.cmp.js"
-import { noteService } from "../services/note.service.js"
+import noteList from '../cmps/note-list.cmp.js'
+import addNote from '../cmps/add-note.cmp.js'
+import noteFilter from '../cmps/note-filter.cmp.js'
+import { noteService } from '../services/note.service.js'
+
 export default {
     template: `
             <section class="keep-app">
-            <note-filter @setFilter="setFilter" />
-               <note-list :notes="notesToShow"
-                            @remove="removeNote"
-                            @setPin="setPinNote"
-                            @setNoteTitle="setNoteTitle"
-                            @setNoteTodo="setNoteTodo"
-                            @setNoteColor="setNoteColor"
-                            @duplicateNote="duplicateNote"/>
+                <note-filter @setFilter="setFilter" />
+                <note-list :notes="notesToShow"
+                                @remove="removeNote"
+                                @setPin="setPinNote"
+                                @setNoteTitle="setNoteTitle"
+                                @setNoteTodo="setNoteTodo"
+                                @setNoteColor="setNoteColor"
+                                @duplicateNote="duplicateNote"/>
             </section>
 `,
     components: {
         noteList,
         addNote,
         noteFilter,
-
     },
     data() {
         return {
@@ -149,7 +149,6 @@ export default {
             if (this.filters?.type) {
                 const regex = new RegExp(this.filters.type, 'i')
                 notes = notes.filter(note => regex.test(note.type))
-                // console.log('filter', notes)
             }
             if (this.txt) {
                 notes = notes.filter(note => {
@@ -158,8 +157,8 @@ export default {
                         return notes.filter(note => regexText.test(note.txt))
                     }
                     if (note.type === 'note-img' || 'note-video' || 'note-audio') {
-                        const regexText = new RegExp(this.txt, 'i')
-                        return notes.filter(note => regexText.test(note.info.title))
+                        const regexMedia = new RegExp(this.txt, 'i')
+                        return notes.filter(note => regexMedia.test(note.info.title))
                     }
                     if (note.type === 'note-todos') {
                         const regexTodo = new RegExp(this.txt, 'i')

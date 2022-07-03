@@ -9,8 +9,7 @@ export default {
     props: ['note'],
     template: `
         <section>
-                <component :is="note.type" :info="note.info">
-                </component> 
+                <component :is="note.type" :info="note.info"></component> 
         </section>
 `,
     components: {
@@ -20,17 +19,5 @@ export default {
         noteDetails,
         noteVideo,
         noteAudio,
-    },
-    created() {
-    },
-    data() {
-        return {
-        };
-    },
-    methods: {
-
-    },
-    computed: {
-
     },
 }
