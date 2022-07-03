@@ -81,8 +81,34 @@
         "style": {
             "backgroundColor": "rgb(240, 229, 183)"
         }
+    },    
+    {
+        "id": "789",
+        "type": "note-video",
+        "isPinned": false,
+        "info": {
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+            "title": "beggin hjh!"
+        },
+        "style": {
+            "backgroundColor": "rgb(240, 229, 183)"  
+        
+        }
     },
-        {
+    {
+        "id": "291",
+        "type": "note-audio",
+        "isPinned": false,
+        "info": {
+            "url": "img/sample-6s.mp3",
+            "title": " audio testing"
+        },
+        "style": {
+            "backgroundColor": "rgb(240, 229, 183)"  
+        
+        }
+    },
+    {
         "id": "811",
         "type": "note-todos",
         "isPinned": false,
@@ -174,6 +200,32 @@
         },
          "style": {
             "backgroundColor": "none"  
+        }
+    },
+    {
+        "id": "200",
+        "type": "note-video",
+        "isPinned": false,
+        "info": {
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            "title": "test data!"
+        },
+        "style": {
+            "backgroundColor": "none"  
+        
+        }
+    },
+    {
+        "id": "333",
+        "type": "note-audio",
+        "isPinned": false,
+        "info": {
+            "url": "img/sample-15s.mp3",
+            "title": "have fun"
+        },
+        "style": {
+            "backgroundColor": "rgb(240, 229, 183)"  
+        
         }
     }
 ]

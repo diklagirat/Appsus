@@ -91,9 +91,10 @@ export default {
             const noteToUpdate = this.notes.find((note) => note.id === noteId)
 
             if (noteType === 'note-txt') noteToUpdate.info.txt = updatedtxt
-            else if (noteType === 'note-img') noteToUpdate.info.title = updatedtxt
+            else if (noteType === 'note-img' || 'note-video' || 'note-audio') noteToUpdate.info.title = updatedtxt
+            // else if (noteType === 'note-video') noteToUpdate.info.title = updatedtxt
+            // else if (noteType === 'note-audio') noteToUpdate.info.title = updatedtxt
             else noteToUpdate.info.label = updatedtxt
-
             noteService.save(noteToUpdate)
                 .then((note) => {
                     this.note = note
@@ -148,14 +149,17 @@ export default {
             if (this.filters?.type) {
                 const regex = new RegExp(this.filters.type, 'i')
                 notes = notes.filter(note => regex.test(note.type))
-                console.log('filter', notes)
+                // console.log('filter', notes)
             }
             if (this.txt) {
-                console.log('fhhjhj')
                 notes = notes.filter(note => {
                     if (note.type === 'note-txt') {
                         const regexText = new RegExp(this.txt, 'i')
                         return notes.filter(note => regexText.test(note.txt))
+                    }
+                    if (note.type === 'note-img' || 'note-video' || 'note-audio') {
+                        const regexText = new RegExp(this.txt, 'i')
+                        return notes.filter(note => regexText.test(note.info.title))
                     }
                     if (note.type === 'note-todos') {
                         const regexTodo = new RegExp(this.txt, 'i')
