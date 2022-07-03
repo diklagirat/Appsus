@@ -156,9 +156,17 @@ export default {
                         const regexText = new RegExp(this.txt, 'i')
                         return notes.filter(note => regexText.test(note.txt))
                     }
-                    if (note.type === 'note-img' || 'note-video' || 'note-audio') {
-                        const regexMedia = new RegExp(this.txt, 'i')
-                        return notes.filter(note => regexMedia.test(note.info.title))
+                    if (note.type === 'note-img' ) {
+                        const regexImag = new RegExp(this.txt, 'i')
+                        return notes.filter(note => regexImag.test(note.info.title))
+                    }
+                     if (note.type === 'note-audio' ) {
+                        const regexAud = new RegExp(this.txt, 'i')
+                        return notes.filter(note => regexAud.test(note.info.title))
+                    }
+                     if (note.type ===  'note-video' ) {
+                        const regexVid = new RegExp(this.txt, 'i')
+                        return notes.filter(note => regexVid.test(note.info.title))
                     }
                     if (note.type === 'note-todos') {
                         const regexTodo = new RegExp(this.txt, 'i')
